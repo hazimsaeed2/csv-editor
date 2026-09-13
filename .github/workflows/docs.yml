@@ -117,8 +117,9 @@ jobs:
           path: _site
 
   deploy:
-    # Pull requests build and link-check, but only main publishes.
-    if: github.event_name != 'pull_request'
+    # Forks build and link-check by default. Set ENABLE_DOCS_DEPLOY=true as a
+    # repository variable after configuring GitHub Pages to publish the site.
+    if: github.event_name != 'pull_request' && vars.ENABLE_DOCS_DEPLOY == 'true'
     needs: build
     runs-on: ubuntu-latest
     timeout-minutes: 10
