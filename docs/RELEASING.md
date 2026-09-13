@@ -74,7 +74,7 @@ code --install-extension csv-editor-<version>.vsix
 
 Open a CSV file and confirm the grid renders, a cell edit saves, an AutoFilter dropdown opens, and the SQL panel returns a result. The SQL panel is the one to check specifically, because it is the only feature that loads a file from disk at runtime.
 
-Uninstall with `code --uninstall-extension hazimsaeed2.csv-editor`.
+Uninstall with `code --uninstall-extension hazimsaeed2.csv-editor-by-hazim`.
 
 ## Publish
 

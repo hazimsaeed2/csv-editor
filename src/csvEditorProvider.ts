@@ -48,7 +48,11 @@ export class GridSession {
     this.post({
       type: "init",
       table: payload,
-      settings: { maxRows: settings.maxRows, sqlResultLimit: settings.sqlResultLimit }
+      settings: {
+        maxRows: settings.maxRows,
+        sqlResultLimit: settings.sqlResultLimit,
+        rainbowColumns: settings.rainbowColumns
+      }
     });
   }
 

@@ -835,6 +835,16 @@ textarea.code {
   border: none;
 }
 
+.vscode-dark .tabulator,
+.vscode-high-contrast .tabulator {
+  --csv-grid-selection-background: var(--vscode-editor-selectionBackground, #264f78);
+}
+
+.vscode-light .tabulator,
+.vscode-high-contrast-light .tabulator {
+  --csv-grid-selection-background: var(--vscode-editor-selectionBackground, #add6ff);
+}
+
 .tabulator .tabulator-header {
   background: var(--vscode-editorWidget-background, var(--vscode-editor-background));
   color: var(--vscode-foreground);
@@ -933,8 +943,9 @@ textarea.code {
 .tabulator-row .tabulator-cell.tabulator-row-header,
 .tabulator .tabulator-header .tabulator-col.tabulator-row-header {
   background: var(--vscode-editorWidget-background, var(--vscode-editor-background));
-  color: var(--vscode-editorLineNumber-foreground, var(--vscode-descriptionForeground));
-  font-size: 11px;
+  color: var(--vscode-editor-foreground);
+  font-size: 12px;
+  font-weight: 600;
   border-right: 2px solid var(--vscode-editorWidget-border, var(--vscode-panel-border));
 }
 
@@ -952,19 +963,68 @@ textarea.code {
   background: var(--vscode-list-hoverBackground);
 }
 
+/* Rainbow text. The palette repeats for wide files. Dark and light themes use
+   separate high-contrast colors while the normal grid backgrounds stay intact. */
+.csv-rainbow-columns .csv-rainbow-col-0 { --csv-column-color: #ff7b8b; }
+.csv-rainbow-columns .csv-rainbow-col-1 { --csv-column-color: #ffb454; }
+.csv-rainbow-columns .csv-rainbow-col-2 { --csv-column-color: #e5c84f; }
+.csv-rainbow-columns .csv-rainbow-col-3 { --csv-column-color: #6fdc8c; }
+.csv-rainbow-columns .csv-rainbow-col-4 { --csv-column-color: #4ddbd2; }
+.csv-rainbow-columns .csv-rainbow-col-5 { --csv-column-color: #61b7ff; }
+.csv-rainbow-columns .csv-rainbow-col-6 { --csv-column-color: #8c9eff; }
+.csv-rainbow-columns .csv-rainbow-col-7 { --csv-column-color: #bd8cff; }
+.csv-rainbow-columns .csv-rainbow-col-8 { --csv-column-color: #f184d1; }
+.csv-rainbow-columns .csv-rainbow-col-9 { --csv-column-color: #ff8a65; }
+
+.vscode-light .csv-rainbow-columns .csv-rainbow-col-0 { --csv-column-color: #b4233b; }
+.vscode-light .csv-rainbow-columns .csv-rainbow-col-1 { --csv-column-color: #9a4d00; }
+.vscode-light .csv-rainbow-columns .csv-rainbow-col-2 { --csv-column-color: #806800; }
+.vscode-light .csv-rainbow-columns .csv-rainbow-col-3 { --csv-column-color: #137333; }
+.vscode-light .csv-rainbow-columns .csv-rainbow-col-4 { --csv-column-color: #006d68; }
+.vscode-light .csv-rainbow-columns .csv-rainbow-col-5 { --csv-column-color: #005ea8; }
+.vscode-light .csv-rainbow-columns .csv-rainbow-col-6 { --csv-column-color: #3949ab; }
+.vscode-light .csv-rainbow-columns .csv-rainbow-col-7 { --csv-column-color: #7137a8; }
+.vscode-light .csv-rainbow-columns .csv-rainbow-col-8 { --csv-column-color: #a12c78; }
+.vscode-light .csv-rainbow-columns .csv-rainbow-col-9 { --csv-column-color: #a83b16; }
+
+.csv-rainbow-columns.tabulator .tabulator-header .tabulator-col[class*="csv-rainbow-col-"]:not(.tabulator-range-selected),
+.csv-rainbow-columns .tabulator-row .tabulator-cell[class*="csv-rainbow-col-"]:not(.tabulator-range-selected):not(.csv-match-current):not(.tabulator-editing) {
+  color: var(--csv-column-color);
+}
+
 .tabulator-row .tabulator-cell.tabulator-frozen.tabulator-frozen-left,
 .tabulator .tabulator-header .tabulator-col.tabulator-frozen.tabulator-frozen-left {
   border-right: 2px solid var(--vscode-editorWidget-border, var(--vscode-panel-border));
 }
 
 .tabulator .tabulator-header .tabulator-col.tabulator-range-selected,
-.tabulator-row .tabulator-cell.tabulator-row-header.tabulator-range-selected {
-  background: color-mix(in srgb, var(--vscode-focusBorder) 30%, var(--vscode-editor-background));
-  color: var(--vscode-foreground);
+.tabulator-row .tabulator-cell.tabulator-row-header.tabulator-range-selected,
+.tabulator-row.tabulator-range-selected .tabulator-cell.tabulator-range-row-header,
+.tabulator-row.tabulator-range-highlight.tabulator-range-selected .tabulator-cell.tabulator-range-row-header {
+  background-color: var(--csv-grid-selection-background) !important;
+  color: inherit !important;
+}
+
+/* Tabulator separately highlights the active cell's column and row headers.
+   Replace its fixed light-gray fill with the editor's selection color. */
+.tabulator .tabulator-header .tabulator-col.tabulator-range-highlight,
+.tabulator-row.tabulator-range-highlight .tabulator-cell.tabulator-range-row-header {
+  background-color: var(--csv-grid-selection-background) !important;
+  color: var(--vscode-editor-foreground) !important;
+}
+
+.csv-rainbow-columns.tabulator .tabulator-header .tabulator-col[class*="csv-rainbow-col-"].tabulator-range-highlight {
+  color: var(--csv-column-color) !important;
 }
 
 .tabulator-row .tabulator-cell.tabulator-range-selected {
-  background: color-mix(in srgb, var(--vscode-editor-selectionBackground) 60%, transparent);
+  background-color: var(--csv-grid-selection-background) !important;
+  color: inherit !important;
+}
+
+/* Keep each column's rainbow text visible inside a selected range. */
+.csv-rainbow-columns .tabulator-row .tabulator-cell[class*="csv-rainbow-col-"].tabulator-range-selected {
+  color: var(--csv-column-color) !important;
 }
 
 .tabulator-range-overlay .tabulator-range {

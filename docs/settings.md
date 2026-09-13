@@ -39,7 +39,7 @@ Default `5000`. Maximum rows returned to the SQL results panel. The query still 
 
 ### `csvEditor.rainbowColumns`
 
-Default `true`. Give each column a distinct colour when a CSV file is open in the text editor. Colours come from your theme's semantic token colours, so they follow the active theme.
+Default `true`. Give each column a distinct, theme-aware text colour in both the spreadsheet grid and text mode. Grid colors use separate high-contrast palettes for light and dark themes, while text mode uses your theme's semantic token colours.
 
 ### `csvEditor.rainbowMaxLines`
 
@@ -71,7 +71,7 @@ Default `1000`. Rows shown in the pipeline preview grid. Does not affect what is
 
 | Setting | Why it matters |
 | --- | --- |
-| `workbench.editorAssociations` | Set `"*.csv": "csvEditor.gridEditor"` (and the same for `.tsv` / `.tab` / `.psv`) to open files in the grid by default; use `"default"` to keep the text editor |
+| `workbench.editorAssociations` | The grid opens matching files by default. Set `"*.csv": "default"` (and the same for `.tsv` / `.tab` / `.psv`) only when you want rainbow-colored text mode as the default. |
 | `files.encoding` | The grid reads and writes with the encoding VS Code uses for the document |
 | `files.autoSave` | With `afterDelay`, grid edits save automatically, and `onSave` pipelines fire accordingly |
 | `editor.semanticHighlighting.enabled` | Required for rainbow columns; the extension enables it for `csv` and `tsv` by default |

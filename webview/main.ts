@@ -53,7 +53,7 @@ class App {
   /** Row counts captured at load time; the model's arrays are mutated by edits afterwards. */
   private loadedRows = 0;
   private totalRows = 0;
-  private settings: WebviewSettings = { maxRows: 100000, sqlResultLimit: 5000 };
+  private settings: WebviewSettings = { maxRows: 100000, sqlResultLimit: 5000, rainbowColumns: true };
   private activePanel: PanelId = "none";
   private wrap = false;
   private showWhitespace = false;
@@ -339,6 +339,7 @@ class App {
   private async loadTable(payload: TablePayload, settings: WebviewSettings): Promise<void> {
     this.payload = payload;
     this.settings = settings;
+    this.gridEl.classList.toggle("csv-rainbow-columns", settings.rainbowColumns);
     this.loadedRows = payload.rows.length;
     this.totalRows = payload.totalRows;
     const model = payloadToTable(payload);

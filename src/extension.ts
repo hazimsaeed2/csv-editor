@@ -318,7 +318,7 @@ function registerSidebar(context: vscode.ExtensionContext, pipelineService: Pipe
   register("csvEditor.settings.edit", (key: string) => settings.edit(key));
   register("csvEditor.settings.reset", (node: { def?: { key: string } }) => (node?.def ? settings.reset(node.def.key) : undefined));
   register("csvEditor.settings.resetAll", () => settings.resetAll());
-  register("csvEditor.settings.openNative", () => vscode.commands.executeCommand("workbench.action.openSettings", "@ext:hazimsaeed2.csv-editor"));
+  register("csvEditor.settings.openNative", () => vscode.commands.executeCommand("workbench.action.openSettings", "@ext:hazimsaeed2.csv-editor-by-hazim"));
   register("csvEditor.settings.selectScope", async () => {
     const picked = await vscode.window.showQuickPick(
       [

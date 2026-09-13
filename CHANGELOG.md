@@ -1,6 +1,48 @@
 # Changelog
 
-## Unreleased
+## 1.0.11
+
+### Fixed
+
+- Replaced the active cell's gray column-header and row-number highlights with the readable editor selection color while preserving rainbow header text.
+
+## 1.0.10
+
+### Fixed
+
+- Matched grid selections to the text editor's selection background and prevented selection from replacing rainbow column text colors.
+
+## 1.0.9
+
+### Fixed
+
+- Replaced the bright selected-row fill with a subtle theme-matched shade and kept rainbow column text visible inside selected ranges.
+
+## 1.0.8
+
+### Fixed
+
+- Improved selected-cell contrast with matched light and dark selection colors, and made row numbers larger, brighter and bolder.
+
+## 1.0.7
+
+### Changed
+
+- Rainbow grid coloring now colors the text in each column instead of tinting column backgrounds, preserving the standard VS Code grid and alternating row backgrounds.
+
+## 1.0.6
+
+### Fixed
+
+- Added the missing rainbow column colors to the spreadsheet grid. The colors are theme-aware and preserve alternating row bands, full-row hover tracking, selection, find matches and cell editing.
+
+## 1.0.5
+
+### Fixed
+
+- Restored the spreadsheet grid as the default editor for CSV, TSV, TAB and PSV files. Text mode and rainbow column coloring remain available through **Open as Text**.
+
+## 1.0.4
 
 ### Added
 
@@ -16,12 +58,13 @@
 
 ### Changed
 
+- Optimized the Marketplace name, description, README heading and search tags for relevant CSV and TSV searches, using the unique **CSV Editor by Hazim Saeed** display name.
 - Reworked the Marketplace README to lead with CSV Editor's capabilities and moved upstream attribution to the License section.
 - Distinguished the fork throughout VS Code as **CSV Editor** while leaving the separately installed upstream **CSV Grid Editor** unchanged.
 - Renamed the fork to **CSV Editor**, credited it to **Hazim Saeed**, and moved extension-owned commands and settings to the collision-safe `csvEditor.*` namespace.
 
 - Documentation screenshots and the demo GIF now show the grid inside the VS Code workbench, with the CSV sidebar (Settings, Pipelines, Files) visible rather than a cropped webview.
-- Custom editor `priority` is now `"option"` instead of `"default"`, so CSV/TSV files open in the text editor unless you choose **Open in Grid Editor** or set `workbench.editorAssociations` to `csv.gridEditor`. Getting started, README, settings and troubleshooting docs explain the opt-in path.
+- Added an optional text mode with rainbow column coloring while retaining **Open as Text** as an explicit alternative to the grid.
 - `homepage` now points at the documentation site rather than at the README, so the Marketplace listing links there.
 
 ## 1.0.0

@@ -61,6 +61,7 @@ export type HostMessage =
 export interface WebviewSettings {
   maxRows: number;
   sqlResultLimit: number;
+  rainbowColumns: boolean;
 }
 
 /** Messages from the webview to the extension host. */

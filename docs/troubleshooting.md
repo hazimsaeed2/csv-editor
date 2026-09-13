@@ -2,11 +2,9 @@
 
 ## The file opens as text instead of a grid
 
-That is the default. The grid is an optional editor so it does not hijack every CSV. Open it with **Open in Grid Editor** in the title bar, the Explorer context menu, **CSV: Open in Grid Editor**, or **Open With…** → **CSV Editor**.
+The spreadsheet grid is the default. Open it with **Open in Grid Editor** in the title bar, the Explorer context menu, **CSV: Open in Grid Editor**, or **Open With…** → **CSV Editor**.
 
-To always open matching files in the grid, set `workbench.editorAssociations` (for example `"*.csv": "csvEditor.gridEditor"`), or use **Open With…** → **Configure default editor…**. See [Getting started](getting-started.md).
-
-If you already set the grid as default and a file still opens as text, another association is winning — check `workbench.editorAssociations` for a more specific pattern covering that file.
+If a file still opens as text, another editor association is winning. Check `workbench.editorAssociations` for a pattern covering that file, remove it, or use **Open With…** → **Configure Default Editor…** → **CSV Editor**. See [Getting started](getting-started.md).
 
 ## Columns are split in the wrong places
 

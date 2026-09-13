@@ -1,8 +1,8 @@
 {
-  "name": "csv-editor",
-  "displayName": "CSV Editor",
-  "description": "CSV Editor for VS Code with a spreadsheet grid, clear row banding, column colors, filters, statistics, charts, SQL and data pipelines.",
-  "version": "1.0.3",
+  "name": "csv-editor-by-hazim",
+  "displayName": "CSV Editor by Hazim Saeed",
+  "description": "Fast CSV and TSV editor for VS Code with a spreadsheet grid, filters, sorting, column colors, statistics, charts, SQL queries and data pipelines.",
+  "version": "1.0.11",
   "publisher": "hazimsaeed2",
   "author": {
     "name": "Hazim Saeed"
@@ -25,16 +25,34 @@
   },
   "keywords": [
     "csv",
+    "csv editor",
+    "csv viewer",
+    "csv formatter",
+    "csv table",
+    "large csv",
     "tsv",
+    "tsv editor",
     "grid",
+    "data grid",
     "table",
+    "table editor",
     "spreadsheet",
     "excel",
     "sql",
+    "csv sql",
     "data",
+    "data analysis",
+    "data cleaning",
+    "data visualization",
     "filter",
+    "sort",
+    "statistics",
+    "charts",
     "pipeline",
     "delimited",
+    "comma separated values",
+    "tab separated values",
+    "column colors",
     "data science"
   ],
   "engines": {
@@ -111,7 +129,7 @@
             "filenamePattern": "*.psv"
           }
         ],
-        "priority": "option"
+        "priority": "default"
       }
     ],
     "commands": [
@@ -505,7 +523,7 @@
         "csvEditor.rainbowColumns": {
           "type": "boolean",
           "default": true,
-          "description": "Colour each column differently when a CSV/TSV file is opened as text."
+          "description": "Colour each column differently in both the spreadsheet grid and text mode."
         },
         "csvEditor.rainbowMaxLines": {
           "type": "number",

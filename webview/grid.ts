@@ -710,7 +710,7 @@ export class CsvGrid {
         hozAlign: numeric ? "right" : "left",
         headerMenu: () => this.columnMenu(c),
         formatter: (cell: CellComponent) => this.formatCell(cell, c),
-        cssClass: `csv-type-${type}`
+        cssClass: `csv-type-${type} csv-rainbow-col-${c % 10}`
       });
     }
     return defs;

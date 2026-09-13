@@ -1,6 +1,6 @@
-# CSV Editor
+# CSV Editor for VS Code
 
-**CSV Editor by Hazim Saeed** brings a fast, spreadsheet-style CSV and TSV editor directly into VS Code. Edit data, filter columns, inspect statistics, build charts, run SQL queries, and automate repeatable cleanup without leaving your workspace.
+**CSV Editor by Hazim Saeed** is a fast CSV and TSV editor for VS Code and an enhanced version of the original [CSV Grid Editor](https://github.com/bamr87/csv-vscoode) by **Bash-365**. This fork builds on the original spreadsheet-style data grid while preserving full credit to its creator and the original MIT license. Open, view, edit, filter, sort and format CSV or TSV files; inspect statistics, build charts, run SQL queries and automate repeatable data cleanup without leaving your workspace.
 
 Rainbow column colors make wide files easier to scan. Clear alternating row bands and a full-width hover outline help you follow the same record while scrolling horizontally.
 
@@ -108,20 +108,20 @@ Open any CSV as text and each column gets its own colour, hovering a cell names 
 
 ## Getting started
 
-Install from the Marketplace, then open any `.csv`, `.tsv`, `.tab` or `.psv` file in the text editor as usual. Open the grid with **Open in Grid Editor** in the editor title bar, from the Explorer context menu, or via **CSV: Open in Grid Editor**.
+Install from the Marketplace, then open any `.csv`, `.tsv`, `.tab` or `.psv` file. It opens automatically in the spreadsheet grid with editing, filters, statistics, charts, SQL and pipelines available.
 
-To make the grid the default for those extensions:
+To use rainbow-colored text mode instead, select **Open as Text** from the editor title bar or run **CSV: Open as Text**. To make text mode the default, add:
 
 ```json
 "workbench.editorAssociations": {
-  "*.csv": "csvEditor.gridEditor",
-  "*.tsv": "csvEditor.gridEditor",
-  "*.tab": "csvEditor.gridEditor",
-  "*.psv": "csvEditor.gridEditor"
+  "*.csv": "default",
+  "*.tsv": "default",
+  "*.tab": "default",
+  "*.psv": "default"
 }
 ```
 
-You can also use **Open With…** → **CSV Editor** → **Configure default editor…**. Details: [Getting started](docs/getting-started.md).
+You can switch back to the grid at any time with **Open in Grid Editor**. Details: [Getting started](docs/getting-started.md).
 
 ## Documentation
 
@@ -169,7 +169,7 @@ Every command is under the **CSV Editor** category in the Command Palette.
 | `csvEditor.delimiter` | `auto` | Field delimiter: `auto`, `,`, `\t`, `;` or `\|` |
 | `csvEditor.maxRows` | `100000` | Rows rendered in the grid |
 | `csvEditor.sqlResultLimit` | `5000` | Maximum rows returned to the SQL panel |
-| `csvEditor.rainbowColumns` | `true` | Colour columns in text mode |
+| `csvEditor.rainbowColumns` | `true` | Colour columns in the spreadsheet grid and text mode |
 | `csvEditor.rainbowMaxLines` | `20000` | Only colour the first N lines in text mode |
 | `csvEditor.lintFieldCount` | `true` | Warn about rows whose field count differs from the header |
 | `csvEditor.pipelines.folder` | `.vscode/csv-pipelines` | Where the builder saves new pipelines |

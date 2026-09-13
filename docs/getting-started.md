@@ -2,11 +2,11 @@
 
 ## Install
 
-From the VS Code Marketplace, search for **CSV Editor** and select Install. From a `.vsix` file, run `code --install-extension csv-editor-<version>.vsix`, or use **Extensions: Install from VSIX** in the Command Palette.
+From the VS Code Marketplace, search for **CSV Editor by Hazim Saeed** and select Install. From a `.vsix` file, run `code --install-extension csv-editor-by-hazim-<version>.vsix`, or use **Extensions: Install from VSIX** in the Command Palette.
 
 ## Open a file
 
-`.csv`, `.tsv`, `.tab` and `.psv` files open in the normal text editor by default. The grid is available as an optional custom editor so it does not replace text-first workflows.
+`.csv`, `.tsv`, `.tab` and `.psv` files open automatically in the spreadsheet grid. The complete editor—cell editing, rows and columns, filters, statistics, charts, SQL, export and pipelines—is available from that grid.
 
 Open the grid any of these ways:
 
@@ -25,23 +25,20 @@ To switch to the plain text editor from the grid, use the **Open as text** butto
 
 Text mode has its own features: each column gets a distinct colour, hovering a cell shows its column name and position, the status bar names the column under the cursor, and rows whose field count differs from the header are reported as warnings in the Problems panel.
 
-## Make the grid the default
+## Make text mode the default
 
-If you prefer every matching file to open in the grid, either:
-
-1. Use **Open With…** → **CSV Editor**, then choose **Configure default editor for '*.csv'…** (and the same for `.tsv` / `.tab` / `.psv` if you want), or
-2. Add associations in your settings:
+The grid is the default. If you prefer every matching file to open as rainbow-colored text, add these associations in your settings:
 
 ```json
 "workbench.editorAssociations": {
-  "*.csv": "csvEditor.gridEditor",
-  "*.tsv": "csvEditor.gridEditor",
-  "*.tab": "csvEditor.gridEditor",
-  "*.psv": "csvEditor.gridEditor"
+  "*.csv": "default",
+  "*.tsv": "default",
+  "*.tab": "default",
+  "*.psv": "default"
 }
 ```
 
-To undo that and return to the text editor as the default, remove those entries or set them to `"default"`.
+To return to the spreadsheet grid as the default, remove those entries or use **Open With…** → **Configure Default Editor…** → **CSV Editor**.
 
 ## First steps
 
