@@ -2,7 +2,7 @@
   "name": "csv-editor-by-hazim",
   "displayName": "CSV Editor by Hazim Saeed",
   "description": "Fast CSV and TSV editor for VS Code with a spreadsheet grid, filters, sorting, column colors, statistics, charts, SQL queries and data pipelines.",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "publisher": "hazimsaeed2",
   "author": {
     "name": "Hazim Saeed"

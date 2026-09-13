@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.13
+
+### Fixed
+
+- Made the ascending and descending sort arrows equally bright and removed Tabulator's remaining gray triangle styling.
+
 ## 1.0.12
 
 ### Changed

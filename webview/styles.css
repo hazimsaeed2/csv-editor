@@ -895,8 +895,9 @@ textarea.code {
 .tabulator .tabulator-header .tabulator-col .tabulator-col-content .tabulator-col-sorter .tabulator-arrow {
   width: auto;
   height: auto;
-  border: 0;
+  border: 0 !important;
   color: inherit;
+  opacity: 1;
 }
 
 .tabulator .tabulator-header .tabulator-col .tabulator-col-content .tabulator-col-sorter .tabulator-arrow::before {
@@ -920,6 +921,13 @@ textarea.code {
 
 .tabulator .tabulator-header .tabulator-col.tabulator-sortable[aria-sort="descending"] .tabulator-col-content .tabulator-col-sorter .tabulator-arrow::before {
   content: "↓";
+}
+
+.tabulator .tabulator-header .tabulator-col.tabulator-sortable[aria-sort="ascending"] .tabulator-col-content .tabulator-col-sorter .tabulator-arrow,
+.tabulator .tabulator-header .tabulator-col.tabulator-sortable[aria-sort="descending"] .tabulator-col-content .tabulator-col-sorter .tabulator-arrow {
+  border: 0 !important;
+  color: var(--vscode-button-foreground) !important;
+  opacity: 1;
 }
 
 .tabulator .tabulator-header .tabulator-col .tabulator-header-popup-button {
