@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.12
+
+### Changed
+
+- Replaced the small sorting triangle with clear Excel-style three-state icons: `⇅` for unsorted, `↑` for ascending and `↓` for descending. Active sorting now uses a high-contrast button treatment.
+
 ## 1.0.11
 
 ### Fixed

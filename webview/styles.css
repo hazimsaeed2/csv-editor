@@ -873,19 +873,53 @@ textarea.code {
 }
 
 .tabulator .tabulator-header .tabulator-col.tabulator-sortable .tabulator-col-title {
-  padding-right: 20px;
+  padding-right: 28px;
+}
+
+.tabulator .tabulator-header .tabulator-col .tabulator-col-content .tabulator-col-sorter {
+  right: 3px;
+  width: 22px;
+  height: 22px;
+  top: 50%;
+  bottom: auto;
+  transform: translateY(-50%);
+  justify-content: center;
+  border-radius: 3px;
+  color: var(--vscode-descriptionForeground);
+}
+
+.tabulator .tabulator-header .tabulator-col .tabulator-col-content .tabulator-col-sorter:hover {
+  background: var(--vscode-toolbar-hoverBackground, var(--vscode-list-hoverBackground));
 }
 
 .tabulator .tabulator-header .tabulator-col .tabulator-col-content .tabulator-col-sorter .tabulator-arrow {
-  border-bottom-color: var(--vscode-foreground);
+  width: auto;
+  height: auto;
+  border: 0;
+  color: inherit;
 }
 
-.tabulator .tabulator-header .tabulator-col.tabulator-sortable[aria-sort="ascending"] .tabulator-col-content .tabulator-col-sorter .tabulator-arrow {
-  border-bottom-color: var(--vscode-focusBorder);
+.tabulator .tabulator-header .tabulator-col .tabulator-col-content .tabulator-col-sorter .tabulator-arrow::before {
+  content: "⇅";
+  display: block;
+  font-family: "Segoe UI Symbol", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
 }
 
-.tabulator .tabulator-header .tabulator-col.tabulator-sortable[aria-sort="descending"] .tabulator-col-content .tabulator-col-sorter .tabulator-arrow {
-  border-top-color: var(--vscode-focusBorder);
+.tabulator .tabulator-header .tabulator-col.tabulator-sortable[aria-sort="ascending"] .tabulator-col-content .tabulator-col-sorter,
+.tabulator .tabulator-header .tabulator-col.tabulator-sortable[aria-sort="descending"] .tabulator-col-content .tabulator-col-sorter {
+  color: var(--vscode-button-foreground);
+  background: var(--vscode-button-background);
+}
+
+.tabulator .tabulator-header .tabulator-col.tabulator-sortable[aria-sort="ascending"] .tabulator-col-content .tabulator-col-sorter .tabulator-arrow::before {
+  content: "↑";
+}
+
+.tabulator .tabulator-header .tabulator-col.tabulator-sortable[aria-sort="descending"] .tabulator-col-content .tabulator-col-sorter .tabulator-arrow::before {
+  content: "↓";
 }
 
 .tabulator .tabulator-header .tabulator-col .tabulator-header-popup-button {
