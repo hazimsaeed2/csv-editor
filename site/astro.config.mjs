@@ -39,7 +39,7 @@ export default defineConfig({
   },
   integrations: [
     starlight({
-      title: "CSV Grid Editor",
+      title: "CSV Editor",
       description:
         "Spreadsheet-style grid for CSV and TSV files inside VS Code: edit, Excel-style filters, statistics, charts, SQL queries and repeatable data pipelines.",
       logo: {

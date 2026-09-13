@@ -27,7 +27,7 @@ export interface PipelineSettings {
 }
 
 export function getPipelineSettings(): PipelineSettings {
-  const config = vscode.workspace.getConfiguration("csvPlus.pipelines");
+  const config = vscode.workspace.getConfiguration("csvEditor.pipelines");
   return {
     folder: config.get<string>("folder", ".vscode/csv-pipelines"),
     allowScripts: config.get<boolean>("allowScripts", true),
@@ -53,7 +53,7 @@ export function pipelineTemplate(name: string, applyTo?: string): Pipeline {
   };
 }
 
-export const SCRIPT_TEMPLATE = `// CSV Grid Editor pipeline script.
+export const SCRIPT_TEMPLATE = `// CSV Editor pipeline script.
 // Receives { columns, rows } where rows are objects keyed by column name
 // (numeric/boolean columns are already coerced) and the helper library.
 // Return an array of row objects, { columns, rows }, or nothing to keep
@@ -201,7 +201,7 @@ export class PipelineService {
     if (usesCode && !this.scriptsAllowed()) {
       throw new Error(
         vscode.workspace.isTrusted
-          ? "Expression, script, SQL and command steps are disabled by the csvPlus.pipelines.allowScripts setting."
+          ? "Expression, script, SQL and command steps are disabled by the csvEditor.pipelines.allowScripts setting."
           : "Expression, script, SQL and command steps only run in trusted workspaces."
       );
     }

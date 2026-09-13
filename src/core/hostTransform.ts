@@ -5,7 +5,7 @@ import type { CsvTable } from "./types";
 
 /**
  * Whole-table rewrites that must run against the host's full document model.
- * The webview may only hold a `csvPlus.maxRows` prefix; computing these client-side
+ * The webview may only hold a `csvEditor.maxRows` prefix; computing these client-side
  * and pushing `{ kind: "replaceAll", rows }` would silently drop the unloaded tail.
  */
 export type HostTransform =
@@ -50,7 +50,7 @@ export function rejectReplaceAllWhileTruncated(
   if (ops.some((op) => op.kind === "replaceAll")) {
     return (
       "CSV: refusing to replace the whole table while the grid is truncated. " +
-      "Raise csvPlus.maxRows, or use a host-side transform / pipeline so unloaded rows are not dropped."
+      "Raise csvEditor.maxRows, or use a host-side transform / pipeline so unloaded rows are not dropped."
     );
   }
   return undefined;

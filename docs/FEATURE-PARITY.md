@@ -1,6 +1,6 @@
 # Feature parity analysis
 
-How CSV Grid Editor compares with Excel and with the tools people already use on CSV files, and what is still missing. Updated 2026-09-09 for version 0.2.0.
+How CSV Editor compares with Excel and with the tools people already use on CSV files, and what is still missing. Updated 2026-09-09 for version 0.2.0.
 
 Legend: ✅ available · ◐ partial · ❌ missing · — not applicable to a plain-text CSV.
 
@@ -8,10 +8,10 @@ Compared against: Microsoft Excel (desktop), Rainbow CSV (VS Code), Edit CSV (VS
 
 ## Viewing and navigation
 
-| Feature | Excel | Rainbow CSV | Edit CSV | Excel Viewer | Data Wrangler | csvkit / mlr / qsv | CSV Grid Editor |
+| Feature | Excel | Rainbow CSV | Edit CSV | Excel Viewer | Data Wrangler | csvkit / mlr / qsv | CSV Editor |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Grid view with row numbers | ✅ | ❌ (text) | ✅ | ✅ | ✅ | ❌ | ✅ |
-| Virtualised rendering for 100k+ rows | ✅ | ✅ | ◐ | ✅ | ✅ | ✅ | ✅ (`csvPlus.maxRows`) |
+| Virtualised rendering for 100k+ rows | ✅ | ✅ | ◐ | ✅ | ✅ | ✅ | ✅ (`csvEditor.maxRows`) |
 | Column type inference | ✅ | ◐ | ❌ | ✅ | ✅ | ✅ | ✅ |
 | Frozen header row | ✅ | — | ✅ | ✅ | ✅ | — | ✅ |
 | Frozen columns / freeze panes | ✅ | — | ✅ (fixed columns) | ✅ | ❌ | — | ◐ row numbers only (see gaps) |
@@ -28,7 +28,7 @@ Compared against: Microsoft Excel (desktop), Rainbow CSV (VS Code), Edit CSV (VS
 
 ## Editing
 
-| Feature | Excel | Rainbow CSV | Edit CSV | Excel Viewer | Data Wrangler | csvkit / mlr / qsv | CSV Grid Editor |
+| Feature | Excel | Rainbow CSV | Edit CSV | Excel Viewer | Data Wrangler | csvkit / mlr / qsv | CSV Editor |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Edit cells in place, F2 / Enter | ✅ | text only | ✅ | ❌ (read-only) | ❌ | — | ✅ |
 | Type to replace cell content | ✅ | — | ❌ | — | — | — | ✅ |
@@ -58,7 +58,7 @@ Compared against: Microsoft Excel (desktop), Rainbow CSV (VS Code), Edit CSV (VS
 
 ## Search, filter and sort
 
-| Feature | Excel | Rainbow CSV | Edit CSV | Excel Viewer | Data Wrangler | csvkit / mlr / qsv | CSV Grid Editor |
+| Feature | Excel | Rainbow CSV | Edit CSV | Excel Viewer | Data Wrangler | csvkit / mlr / qsv | CSV Editor |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Find / replace with regex | ✅ (wildcards) | (VS Code) | ✅ | ❌ | ❌ | ✅ (`csvgrep`) | ✅ |
 | AutoFilter value list with search | ✅ | ❌ | ❌ | ✅ | ✅ | — | ✅ (cascading, counts, blanks) |
@@ -72,7 +72,7 @@ Compared against: Microsoft Excel (desktop), Rainbow CSV (VS Code), Edit CSV (VS
 
 ## Analysis and exploration
 
-| Feature | Excel | Rainbow CSV | Edit CSV | Excel Viewer | Data Wrangler | csvkit / mlr / qsv | CSV Grid Editor |
+| Feature | Excel | Rainbow CSV | Edit CSV | Excel Viewer | Data Wrangler | csvkit / mlr / qsv | CSV Editor |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Selection sum / average / count / min / max | ✅ | ❌ | ◐ | ❌ | ❌ | — | ✅ |
 | Column statistics (distinct, nulls, quartiles, std dev) | ◐ | ❌ | ◐ | ❌ | ✅ | ✅ (`csvstat`, `stats`) | ✅ |
@@ -86,7 +86,7 @@ Compared against: Microsoft Excel (desktop), Rainbow CSV (VS Code), Edit CSV (VS
 
 ## Transformation, automation and export
 
-| Feature | Excel | Rainbow CSV | Edit CSV | Excel Viewer | Data Wrangler | csvkit / mlr / qsv | CSV Grid Editor |
+| Feature | Excel | Rainbow CSV | Edit CSV | Excel Viewer | Data Wrangler | csvkit / mlr / qsv | CSV Editor |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Recorded / reusable transformation steps | ✅ (Power Query, macros) | ❌ | ❌ | ❌ | ✅ (generates pandas) | ✅ (shell) | ✅ (`*.csvpipe.json`, no-code / low-code / code) |
 | Run automatically on open / save | ◐ (VBA) | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |

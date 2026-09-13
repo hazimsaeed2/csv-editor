@@ -48,7 +48,7 @@ Press `Ctrl+F` (`Cmd+F` on macOS) to open the find bar.
 - **Replace** changes the current match; **Replace all** changes every match in one undo step.
 - In regular expression mode the replacement supports capture groups such as `$1`. In plain mode the replacement is inserted literally, so `$&` stays `$&`.
 
-Find covers the rows loaded in the grid. On a file larger than `csvPlus.maxRows`, use SQL or a pipeline to reach the rest.
+Find covers the rows loaded in the grid. On a file larger than `csvEditor.maxRows`, use SQL or a pipeline to reach the rest.
 
 ## Sorting
 

@@ -1,6 +1,6 @@
 # Documentation site
 
-The public documentation for the CSV Grid Editor extension, published to **[apps.bash-365.com/csv-vscode](https://apps.bash-365.com/csv-vscode/)**.
+The public documentation for the CSV Editor extension, published to **[apps.bash-365.com/csv-vscode](https://apps.bash-365.com/csv-vscode/)**.
 
 [Astro](https://astro.build/) with [Starlight](https://starlight.astro.build/): a static build, no server, no database. It is deployed to GitHub Pages by [`.github/workflows/docs.yml`](../.github/workflows/docs.yml) on every push to `main` that touches the documentation or the extension's contributed surface.
 

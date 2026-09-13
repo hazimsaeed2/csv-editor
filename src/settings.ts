@@ -11,7 +11,7 @@ export interface CsvSettings {
 }
 
 export function getSettings(scope?: vscode.ConfigurationScope): CsvSettings {
-  const config = vscode.workspace.getConfiguration("csvPlus", scope);
+  const config = vscode.workspace.getConfiguration("csvEditor", scope);
   return {
     hasHeaderRow: config.get<boolean>("hasHeaderRow", true),
     delimiter: config.get<string>("delimiter", "auto"),

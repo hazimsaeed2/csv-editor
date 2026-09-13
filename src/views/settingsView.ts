@@ -11,7 +11,7 @@ import {
   type SettingScope
 } from "./settingsModel";
 
-const SCOPE_KEY = "csvPlus.settingsScope";
+const SCOPE_KEY = "csvEditor.settingsScope";
 
 type Node =
   | { kind: "group"; label: string }
@@ -140,7 +140,7 @@ export class SettingsViewProvider implements vscode.TreeDataProvider<Node> {
       item.iconPath = new vscode.ThemeIcon("symbol-string");
     }
 
-    item.command = { command: "csvPlus.settings.edit", title: "Edit", arguments: [def.key] };
+    item.command = { command: "csvEditor.settings.edit", title: "Edit", arguments: [def.key] };
     return item;
   }
 
@@ -161,7 +161,7 @@ export class SettingsViewProvider implements vscode.TreeDataProvider<Node> {
     }
     item.tooltip = `Applies only to ${vscode.workspace.asRelativePath(node.uri, false)}.`;
     item.command = {
-      command: "csvPlus.settings.editFileOverride",
+      command: "csvEditor.settings.editFileOverride",
       title: "Edit",
       arguments: [node.which, node.uri]
     };
@@ -296,13 +296,13 @@ export class SettingsViewProvider implements vscode.TreeDataProvider<Node> {
       await setDocumentOverrides(state, uri, { delimiter: picked.value });
     }
     // The grid re-reads overrides when the document changes; nudge open editors.
-    await vscode.commands.executeCommand("csvPlus.reloadDocument", uri);
+    await vscode.commands.executeCommand("csvEditor.reloadDocument", uri);
     this.refresh();
   }
 
   async clearFileOverrides(uri: vscode.Uri): Promise<void> {
     await setDocumentOverrides(this.context.workspaceState, uri, { hasHeader: undefined, delimiter: undefined });
-    await vscode.commands.executeCommand("csvPlus.reloadDocument", uri);
+    await vscode.commands.executeCommand("csvEditor.reloadDocument", uri);
     this.refresh();
   }
 }

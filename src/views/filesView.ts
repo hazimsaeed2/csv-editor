@@ -48,7 +48,7 @@ export class FilesViewProvider implements vscode.TreeDataProvider<FileNode> {
     item.resourceUri = node.uri;
     item.tooltip = node.relativePath;
     item.contextValue = "csvFile";
-    item.command = { command: "csvPlus.openGrid", title: "Open in Grid Editor", arguments: [node.uri] };
+    item.command = { command: "csvEditor.openGrid", title: "Open in Grid Editor", arguments: [node.uri] };
     return item;
   }
 }

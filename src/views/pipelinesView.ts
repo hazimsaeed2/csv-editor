@@ -47,7 +47,7 @@ export class PipelinesViewProvider implements vscode.TreeDataProvider<PipelineNo
       item.matches ? new vscode.ThemeColor("charts.green") : undefined
     );
     treeItem.contextValue = "csvPipeline";
-    treeItem.command = { command: "csvPlus.pipelines.run", title: "Run", arguments: [node] };
+    treeItem.command = { command: "csvEditor.pipelines.run", title: "Run", arguments: [node] };
     return treeItem;
   }
 

@@ -68,10 +68,10 @@ export function activate(context: vscode.ExtensionContext): void {
     context.subscriptions.push(vscode.commands.registerCommand(command, callback));
   };
 
-  register("csvPlus.openGrid", (uri?: unknown) => openGrid(uri instanceof vscode.Uri ? uri : undefined));
+  register("csvEditor.openGrid", (uri?: unknown) => openGrid(uri instanceof vscode.Uri ? uri : undefined));
 
   // Internal: re-read a document after its per-file overrides changed.
-  register("csvPlus.reloadDocument", (uri?: unknown) => {
+  register("csvEditor.reloadDocument", (uri?: unknown) => {
     if (!(uri instanceof vscode.Uri)) {
       return;
     }
@@ -82,23 +82,23 @@ export function activate(context: vscode.ExtensionContext): void {
     }
   });
 
-  register("csvPlus.openAsText", async (uri?: unknown) => {
+  register("csvEditor.openAsText", async (uri?: unknown) => {
     const target = resolveUri(uri instanceof vscode.Uri ? uri : undefined);
     if (target) {
       await vscode.commands.executeCommand("vscode.openWith", target, "default");
     }
   });
 
-  register("csvPlus.runSql", withGridPanel("sql"));
-  register("csvPlus.columnStats", withGridPanel("stats"));
-  register("csvPlus.chart", withGridPanel("chart"));
+  register("csvEditor.runSql", withGridPanel("sql"));
+  register("csvEditor.columnStats", withGridPanel("stats"));
+  register("csvEditor.chart", withGridPanel("chart"));
 
-  register("csvPlus.find", async (uri?: unknown) => {
+  register("csvEditor.find", async (uri?: unknown) => {
     const session = await openGrid(uri instanceof vscode.Uri ? uri : undefined);
     session?.focusFind();
   });
 
-  register("csvPlus.export", async (uri?: unknown) => {
+  register("csvEditor.export", async (uri?: unknown) => {
     const target = resolveUri(uri instanceof vscode.Uri ? uri : undefined);
     if (!target) {
       vscode.window.showErrorMessage("Open a CSV file first.");
@@ -109,7 +109,7 @@ export function activate(context: vscode.ExtensionContext): void {
     await pickFormatAndExport(model.getTable(), target);
   });
 
-  register("csvPlus.toggleHeaderRow", async () => {
+  register("csvEditor.toggleHeaderRow", async () => {
     const session = provider.active ?? (await openGrid());
     if (!session) {
       return;
@@ -120,7 +120,7 @@ export function activate(context: vscode.ExtensionContext): void {
     session.post({ type: "setHeader", hasHeader: next });
   });
 
-  register("csvPlus.setDelimiter", async () => {
+  register("csvEditor.setDelimiter", async () => {
     const session = provider.active ?? (await openGrid());
     if (!session) {
       return;
@@ -140,10 +140,10 @@ export function activate(context: vscode.ExtensionContext): void {
     session.sendTable();
   });
 
-  register("csvPlus.openPipelinePanel", withGridPanel("pipeline"));
-  register("csvPlus.showPipelineLog", () => pipelines.showLog());
+  register("csvEditor.openPipelinePanel", withGridPanel("pipeline"));
+  register("csvEditor.showPipelineLog", () => pipelines.showLog());
 
-  register("csvPlus.runPipeline", async (arg?: unknown) => {
+  register("csvEditor.runPipeline", async (arg?: unknown) => {
     const argUri = arg instanceof vscode.Uri ? arg : undefined;
     let pipelinePath: string | undefined;
     let target: vscode.Uri | undefined;
@@ -166,9 +166,9 @@ export function activate(context: vscode.ExtensionContext): void {
       if (items.length === 0) {
         const create = await vscode.window.showInformationMessage("No *.csvpipe.json pipelines found in the workspace.", "Create one", "Open pipeline panel");
         if (create === "Create one") {
-          await vscode.commands.executeCommand("csvPlus.newPipeline");
+          await vscode.commands.executeCommand("csvEditor.newPipeline");
         } else if (create) {
-          await vscode.commands.executeCommand("csvPlus.openPipelinePanel", target);
+          await vscode.commands.executeCommand("csvEditor.openPipelinePanel", target);
         }
         return;
       }
@@ -200,7 +200,7 @@ export function activate(context: vscode.ExtensionContext): void {
     }
   });
 
-  register("csvPlus.newPipeline", async () => {
+  register("csvEditor.newPipeline", async () => {
     const name = await vscode.window.showInputBox({ prompt: "Pipeline name", value: "My pipeline" });
     if (!name) {
       return;
@@ -217,7 +217,7 @@ export function activate(context: vscode.ExtensionContext): void {
     }
   });
 
-  register("csvPlus.newPipelineScript", async () => {
+  register("csvEditor.newPipelineScript", async () => {
     const path = await vscode.window.showInputBox({ prompt: "Script path (workspace-relative)", value: "scripts/transform.js" });
     if (!path) {
       return;
@@ -230,18 +230,18 @@ export function activate(context: vscode.ExtensionContext): void {
     }
   });
 
-  register("csvPlus.showActions", async () => {
+  register("csvEditor.showActions", async () => {
     const actions: { label: string; command: string }[] = [
-      { label: "$(search) Find and replace", command: "csvPlus.find" },
-      { label: "$(graph) Column statistics", command: "csvPlus.columnStats" },
-      { label: "$(pie-chart) Chart a column", command: "csvPlus.chart" },
-      { label: "$(database) Run SQL query", command: "csvPlus.runSql" },
-      { label: "$(export) Export as…", command: "csvPlus.export" },
-      { label: "$(run-all) Run pipeline…", command: "csvPlus.runPipeline" },
-      { label: "$(tools) Pipeline builder", command: "csvPlus.openPipelinePanel" },
-      { label: "$(list-flat) Toggle header row", command: "csvPlus.toggleHeaderRow" },
-      { label: "$(symbol-operator) Set delimiter", command: "csvPlus.setDelimiter" },
-      { label: "$(file-code) Open as text", command: "csvPlus.openAsText" }
+      { label: "$(search) Find and replace", command: "csvEditor.find" },
+      { label: "$(graph) Column statistics", command: "csvEditor.columnStats" },
+      { label: "$(pie-chart) Chart a column", command: "csvEditor.chart" },
+      { label: "$(database) Run SQL query", command: "csvEditor.runSql" },
+      { label: "$(export) Export as…", command: "csvEditor.export" },
+      { label: "$(run-all) Run pipeline…", command: "csvEditor.runPipeline" },
+      { label: "$(tools) Pipeline builder", command: "csvEditor.openPipelinePanel" },
+      { label: "$(list-flat) Toggle header row", command: "csvEditor.toggleHeaderRow" },
+      { label: "$(symbol-operator) Set delimiter", command: "csvEditor.setDelimiter" },
+      { label: "$(file-code) Open as text", command: "csvEditor.openAsText" }
     ];
     const pick = await vscode.window.showQuickPick(actions, { placeHolder: "CSV actions" });
     if (pick) {
@@ -266,9 +266,9 @@ function registerSidebar(context: vscode.ExtensionContext, pipelineService: Pipe
   const pipelines = new PipelinesViewProvider(pipelineService);
   const files = new FilesViewProvider();
 
-  const settingsTree = vscode.window.createTreeView("csvPlus.settingsView", { treeDataProvider: settings, showCollapseAll: true });
-  const pipelinesTree = vscode.window.createTreeView("csvPlus.pipelinesView", { treeDataProvider: pipelines });
-  const filesTree = vscode.window.createTreeView("csvPlus.filesView", { treeDataProvider: files });
+  const settingsTree = vscode.window.createTreeView("csvEditor.settingsView", { treeDataProvider: settings, showCollapseAll: true });
+  const pipelinesTree = vscode.window.createTreeView("csvEditor.pipelinesView", { treeDataProvider: pipelines });
+  const filesTree = vscode.window.createTreeView("csvEditor.filesView", { treeDataProvider: files });
   context.subscriptions.push(settingsTree, pipelinesTree, filesTree);
 
   const syncScopeLabel = (): void => {
@@ -285,7 +285,7 @@ function registerSidebar(context: vscode.ExtensionContext, pipelineService: Pipe
   // Keep the views honest as the workspace changes underneath them.
   context.subscriptions.push(
     vscode.workspace.onDidChangeConfiguration((e) => {
-      if (e.affectsConfiguration("csvPlus")) {
+      if (e.affectsConfiguration("csvEditor")) {
         settings.refresh();
       }
     }),
@@ -313,13 +313,13 @@ function registerSidebar(context: vscode.ExtensionContext, pipelineService: Pipe
     context.subscriptions.push(vscode.commands.registerCommand(command, callback as (...args: unknown[]) => unknown));
   };
 
-  register("csvPlus.views.refresh", () => refreshAll());
+  register("csvEditor.views.refresh", () => refreshAll());
 
-  register("csvPlus.settings.edit", (key: string) => settings.edit(key));
-  register("csvPlus.settings.reset", (node: { def?: { key: string } }) => (node?.def ? settings.reset(node.def.key) : undefined));
-  register("csvPlus.settings.resetAll", () => settings.resetAll());
-  register("csvPlus.settings.openNative", () => vscode.commands.executeCommand("workbench.action.openSettings", "@ext:bash-365.csv-grid-viewer"));
-  register("csvPlus.settings.selectScope", async () => {
+  register("csvEditor.settings.edit", (key: string) => settings.edit(key));
+  register("csvEditor.settings.reset", (node: { def?: { key: string } }) => (node?.def ? settings.reset(node.def.key) : undefined));
+  register("csvEditor.settings.resetAll", () => settings.resetAll());
+  register("csvEditor.settings.openNative", () => vscode.commands.executeCommand("workbench.action.openSettings", "@ext:hazimsaeed2.csv-editor"));
+  register("csvEditor.settings.selectScope", async () => {
     const picked = await vscode.window.showQuickPick(
       [
         { label: "Workspace", description: "applies to this project only", value: "workspace" as SettingScope },
@@ -332,21 +332,21 @@ function registerSidebar(context: vscode.ExtensionContext, pipelineService: Pipe
       syncScopeLabel();
     }
   });
-  register("csvPlus.settings.editFileOverride", (which: "header" | "delimiter", uri: vscode.Uri) => settings.editFileOverride(which, uri));
-  register("csvPlus.settings.clearFileOverride", (node: { uri?: vscode.Uri }) => (node?.uri ? settings.clearFileOverrides(node.uri) : undefined));
+  register("csvEditor.settings.editFileOverride", (which: "header" | "delimiter", uri: vscode.Uri) => settings.editFileOverride(which, uri));
+  register("csvEditor.settings.clearFileOverride", (node: { uri?: vscode.Uri }) => (node?.uri ? settings.clearFileOverrides(node.uri) : undefined));
 
-  register("csvPlus.pipelines.run", (node: unknown) => {
+  register("csvEditor.pipelines.run", (node: unknown) => {
     const path = pipelines.pathOf(node as Parameters<typeof pipelines.pathOf>[0]);
-    return vscode.commands.executeCommand("csvPlus.runPipeline", path ? pipelineService.resolveWorkspacePath(path) : undefined);
+    return vscode.commands.executeCommand("csvEditor.runPipeline", path ? pipelineService.resolveWorkspacePath(path) : undefined);
   });
-  register("csvPlus.pipelines.edit", async (node: unknown) => {
+  register("csvEditor.pipelines.edit", async (node: unknown) => {
     const path = pipelines.pathOf(node as Parameters<typeof pipelines.pathOf>[0]);
     if (path) {
       await vscode.window.showTextDocument(pipelineService.resolveWorkspacePath(path));
     }
   });
 
-  register("csvPlus.files.openAsText", async (node: { uri?: vscode.Uri }) => {
+  register("csvEditor.files.openAsText", async (node: { uri?: vscode.Uri }) => {
     if (node?.uri) {
       await vscode.commands.executeCommand("vscode.openWith", node.uri, "default");
     }

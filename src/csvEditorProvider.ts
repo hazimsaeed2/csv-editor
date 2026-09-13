@@ -10,7 +10,7 @@ import { getSettings } from "./settings";
 import { SqlEngine } from "./sqlEngine";
 import { loadSqlJs } from "./sqlLoader";
 
-export const VIEW_TYPE = "csvPlus.gridEditor";
+export const VIEW_TYPE = "csvEditor.gridEditor";
 
 /** One open grid editor: the webview panel plus its document model. */
 export class GridSession {
@@ -148,7 +148,7 @@ export class CsvEditorProvider implements vscode.CustomTextEditorProvider {
 
     subscriptions.push(
       vscode.workspace.onDidChangeConfiguration((e) => {
-        if (e.affectsConfiguration("csvPlus", document)) {
+        if (e.affectsConfiguration("csvEditor", document)) {
           model.invalidate();
           session.sendTable();
         }

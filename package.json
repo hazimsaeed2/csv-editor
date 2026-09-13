@@ -1,9 +1,12 @@
 {
-  "name": "csv-grid-editor-plus",
-  "displayName": "CSV Grid Editor Plus",
-  "description": "Spreadsheet-style CSV and TSV editor with clear row banding, column colors, filters, statistics, charts, SQL queries and repeatable data pipelines.",
-  "version": "1.0.0",
+  "name": "csv-editor",
+  "displayName": "CSV Editor",
+  "description": "CSV Editor for VS Code with a spreadsheet grid, clear row banding, column colors, filters, statistics, charts, SQL and data pipelines.",
+  "version": "1.0.1",
   "publisher": "hazimsaeed2",
+  "author": {
+    "name": "Hazim Saeed"
+  },
   "license": "MIT",
   "icon": "media/icon.png",
   "galleryBanner": {
@@ -14,11 +17,11 @@
   "qna": "marketplace",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hazimsaeed2/csv-grid-editor-plus.git"
+    "url": "https://github.com/hazimsaeed2/csv-editor.git"
   },
-  "homepage": "https://github.com/hazimsaeed2/csv-grid-editor-plus#readme",
+  "homepage": "https://github.com/hazimsaeed2/csv-editor#readme",
   "bugs": {
-    "url": "https://github.com/hazimsaeed2/csv-grid-editor-plus/issues"
+    "url": "https://github.com/hazimsaeed2/csv-editor/issues"
   },
   "keywords": [
     "csv",
@@ -60,9 +63,9 @@
     "onLanguage:csv",
     "onLanguage:tsv",
     "workspaceContains:**/*.csvpipe.json",
-    "onView:csvPlus.settingsView",
-    "onView:csvPlus.pipelinesView",
-    "onView:csvPlus.filesView"
+    "onView:csvEditor.settingsView",
+    "onView:csvEditor.pipelinesView",
+    "onView:csvEditor.filesView"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -92,8 +95,8 @@
     ],
     "customEditors": [
       {
-        "viewType": "csvPlus.gridEditor",
-        "displayName": "CSV Grid Editor Plus",
+        "viewType": "csvEditor.gridEditor",
+        "displayName": "CSV Editor",
         "selector": [
           {
             "filenamePattern": "*.csv"
@@ -113,150 +116,150 @@
     ],
     "commands": [
       {
-        "command": "csvPlus.openGrid",
+        "command": "csvEditor.openGrid",
         "title": "Open in Grid Editor",
         "category": "CSV",
         "icon": "$(table)"
       },
       {
-        "command": "csvPlus.openAsText",
+        "command": "csvEditor.openAsText",
         "title": "Open as Text",
         "category": "CSV",
         "icon": "$(file-code)"
       },
       {
-        "command": "csvPlus.find",
+        "command": "csvEditor.find",
         "title": "Find and Replace in Grid",
         "category": "CSV"
       },
       {
-        "command": "csvPlus.columnStats",
+        "command": "csvEditor.columnStats",
         "title": "Column Statistics",
         "category": "CSV"
       },
       {
-        "command": "csvPlus.chart",
+        "command": "csvEditor.chart",
         "title": "Chart a Column",
         "category": "CSV"
       },
       {
-        "command": "csvPlus.runSql",
+        "command": "csvEditor.runSql",
         "title": "Run SQL Query",
         "category": "CSV"
       },
       {
-        "command": "csvPlus.export",
+        "command": "csvEditor.export",
         "title": "Export As…",
         "category": "CSV"
       },
       {
-        "command": "csvPlus.toggleHeaderRow",
+        "command": "csvEditor.toggleHeaderRow",
         "title": "Toggle Header Row",
         "category": "CSV"
       },
       {
-        "command": "csvPlus.setDelimiter",
+        "command": "csvEditor.setDelimiter",
         "title": "Set Delimiter",
         "category": "CSV"
       },
       {
-        "command": "csvPlus.showActions",
+        "command": "csvEditor.showActions",
         "title": "Show Actions",
         "category": "CSV"
       },
       {
-        "command": "csvPlus.runPipeline",
+        "command": "csvEditor.runPipeline",
         "title": "Run Pipeline…",
         "category": "CSV",
         "icon": "$(run-all)"
       },
       {
-        "command": "csvPlus.openPipelinePanel",
+        "command": "csvEditor.openPipelinePanel",
         "title": "Open Pipeline Builder",
         "category": "CSV"
       },
       {
-        "command": "csvPlus.newPipeline",
+        "command": "csvEditor.newPipeline",
         "title": "New Pipeline",
         "category": "CSV"
       },
       {
-        "command": "csvPlus.newPipelineScript",
+        "command": "csvEditor.newPipelineScript",
         "title": "New Pipeline Script",
         "category": "CSV"
       },
       {
-        "command": "csvPlus.showPipelineLog",
+        "command": "csvEditor.showPipelineLog",
         "title": "Show Pipeline Log",
         "category": "CSV"
       },
       {
-        "command": "csvPlus.views.refresh",
+        "command": "csvEditor.views.refresh",
         "title": "Refresh",
         "category": "CSV",
         "icon": "$(refresh)"
       },
       {
-        "command": "csvPlus.settings.edit",
+        "command": "csvEditor.settings.edit",
         "title": "Edit Setting",
         "category": "CSV",
         "icon": "$(edit)"
       },
       {
-        "command": "csvPlus.settings.reset",
+        "command": "csvEditor.settings.reset",
         "title": "Reset to Default",
         "category": "CSV",
         "icon": "$(discard)"
       },
       {
-        "command": "csvPlus.settings.resetAll",
+        "command": "csvEditor.settings.resetAll",
         "title": "Reset All Settings",
         "category": "CSV",
         "icon": "$(clear-all)"
       },
       {
-        "command": "csvPlus.settings.openNative",
+        "command": "csvEditor.settings.openNative",
         "title": "Open in Settings Editor",
         "category": "CSV",
         "icon": "$(gear)"
       },
       {
-        "command": "csvPlus.settings.selectScope",
+        "command": "csvEditor.settings.selectScope",
         "title": "Change Settings Scope",
         "category": "CSV",
         "icon": "$(root-folder)"
       },
       {
-        "command": "csvPlus.settings.editFileOverride",
+        "command": "csvEditor.settings.editFileOverride",
         "title": "Edit File Override",
         "category": "CSV"
       },
       {
-        "command": "csvPlus.settings.clearFileOverride",
+        "command": "csvEditor.settings.clearFileOverride",
         "title": "Clear File Overrides",
         "category": "CSV",
         "icon": "$(discard)"
       },
       {
-        "command": "csvPlus.pipelines.run",
+        "command": "csvEditor.pipelines.run",
         "title": "Run Pipeline",
         "category": "CSV",
         "icon": "$(play)"
       },
       {
-        "command": "csvPlus.pipelines.edit",
+        "command": "csvEditor.pipelines.edit",
         "title": "Edit Pipeline File",
         "category": "CSV",
         "icon": "$(go-to-file)"
       },
       {
-        "command": "csvPlus.files.openAsText",
+        "command": "csvEditor.files.openAsText",
         "title": "Open as Text",
         "category": "CSV",
         "icon": "$(file-code)"
       },
       {
-        "command": "csvPlus.reloadDocument",
+        "command": "csvEditor.reloadDocument",
         "title": "Reload Document",
         "category": "CSV"
       }
@@ -264,211 +267,211 @@
     "menus": {
       "commandPalette": [
         {
-          "command": "csvPlus.openGrid",
+          "command": "csvEditor.openGrid",
           "when": "resourceExtname =~ /\\.(csv|tsv|tab|psv)$/i || editorLangId == csv || editorLangId == tsv"
         },
         {
-          "command": "csvPlus.openAsText",
-          "when": "activeCustomEditorId == csvPlus.gridEditor"
+          "command": "csvEditor.openAsText",
+          "when": "activeCustomEditorId == csvEditor.gridEditor"
         },
         {
-          "command": "csvPlus.find",
-          "when": "activeCustomEditorId == csvPlus.gridEditor || editorLangId == csv || editorLangId == tsv"
+          "command": "csvEditor.find",
+          "when": "activeCustomEditorId == csvEditor.gridEditor || editorLangId == csv || editorLangId == tsv"
         },
         {
-          "command": "csvPlus.columnStats",
-          "when": "activeCustomEditorId == csvPlus.gridEditor || editorLangId == csv || editorLangId == tsv"
+          "command": "csvEditor.columnStats",
+          "when": "activeCustomEditorId == csvEditor.gridEditor || editorLangId == csv || editorLangId == tsv"
         },
         {
-          "command": "csvPlus.chart",
-          "when": "activeCustomEditorId == csvPlus.gridEditor || editorLangId == csv || editorLangId == tsv"
+          "command": "csvEditor.chart",
+          "when": "activeCustomEditorId == csvEditor.gridEditor || editorLangId == csv || editorLangId == tsv"
         },
         {
-          "command": "csvPlus.runSql",
-          "when": "activeCustomEditorId == csvPlus.gridEditor || editorLangId == csv || editorLangId == tsv"
+          "command": "csvEditor.runSql",
+          "when": "activeCustomEditorId == csvEditor.gridEditor || editorLangId == csv || editorLangId == tsv"
         },
         {
-          "command": "csvPlus.export",
-          "when": "activeCustomEditorId == csvPlus.gridEditor || editorLangId == csv || editorLangId == tsv"
+          "command": "csvEditor.export",
+          "when": "activeCustomEditorId == csvEditor.gridEditor || editorLangId == csv || editorLangId == tsv"
         },
         {
-          "command": "csvPlus.toggleHeaderRow",
-          "when": "activeCustomEditorId == csvPlus.gridEditor || editorLangId == csv || editorLangId == tsv"
+          "command": "csvEditor.toggleHeaderRow",
+          "when": "activeCustomEditorId == csvEditor.gridEditor || editorLangId == csv || editorLangId == tsv"
         },
         {
-          "command": "csvPlus.setDelimiter",
-          "when": "activeCustomEditorId == csvPlus.gridEditor || editorLangId == csv || editorLangId == tsv"
+          "command": "csvEditor.setDelimiter",
+          "when": "activeCustomEditorId == csvEditor.gridEditor || editorLangId == csv || editorLangId == tsv"
         },
         {
-          "command": "csvPlus.showActions",
-          "when": "activeCustomEditorId == csvPlus.gridEditor || editorLangId == csv || editorLangId == tsv"
+          "command": "csvEditor.showActions",
+          "when": "activeCustomEditorId == csvEditor.gridEditor || editorLangId == csv || editorLangId == tsv"
         },
         {
-          "command": "csvPlus.runPipeline",
-          "when": "activeCustomEditorId == csvPlus.gridEditor || editorLangId == csv || editorLangId == tsv"
+          "command": "csvEditor.runPipeline",
+          "when": "activeCustomEditorId == csvEditor.gridEditor || editorLangId == csv || editorLangId == tsv"
         },
         {
-          "command": "csvPlus.openPipelinePanel",
-          "when": "activeCustomEditorId == csvPlus.gridEditor || editorLangId == csv || editorLangId == tsv"
+          "command": "csvEditor.openPipelinePanel",
+          "when": "activeCustomEditorId == csvEditor.gridEditor || editorLangId == csv || editorLangId == tsv"
         },
         {
-          "command": "csvPlus.settings.edit",
+          "command": "csvEditor.settings.edit",
           "when": "false"
         },
         {
-          "command": "csvPlus.settings.reset",
+          "command": "csvEditor.settings.reset",
           "when": "false"
         },
         {
-          "command": "csvPlus.settings.editFileOverride",
+          "command": "csvEditor.settings.editFileOverride",
           "when": "false"
         },
         {
-          "command": "csvPlus.settings.clearFileOverride",
+          "command": "csvEditor.settings.clearFileOverride",
           "when": "false"
         },
         {
-          "command": "csvPlus.pipelines.run",
+          "command": "csvEditor.pipelines.run",
           "when": "false"
         },
         {
-          "command": "csvPlus.pipelines.edit",
+          "command": "csvEditor.pipelines.edit",
           "when": "false"
         },
         {
-          "command": "csvPlus.files.openAsText",
+          "command": "csvEditor.files.openAsText",
           "when": "false"
         },
         {
-          "command": "csvPlus.reloadDocument",
+          "command": "csvEditor.reloadDocument",
           "when": "false"
         },
         {
-          "command": "csvPlus.views.refresh",
+          "command": "csvEditor.views.refresh",
           "when": "false"
         }
       ],
       "editor/title": [
         {
-          "command": "csvPlus.openGrid",
-          "when": "(resourceExtname =~ /\\.(csv|tsv|tab|psv)$/i || editorLangId == csv || editorLangId == tsv) && activeCustomEditorId != csvPlus.gridEditor",
+          "command": "csvEditor.openGrid",
+          "when": "(resourceExtname =~ /\\.(csv|tsv|tab|psv)$/i || editorLangId == csv || editorLangId == tsv) && activeCustomEditorId != csvEditor.gridEditor",
           "group": "navigation"
         },
         {
-          "command": "csvPlus.openAsText",
-          "when": "activeCustomEditorId == csvPlus.gridEditor",
+          "command": "csvEditor.openAsText",
+          "when": "activeCustomEditorId == csvEditor.gridEditor",
           "group": "navigation"
         },
         {
-          "command": "csvPlus.runPipeline",
+          "command": "csvEditor.runPipeline",
           "when": "resourceFilename =~ /\\.csvpipe\\.json$/",
           "group": "navigation"
         }
       ],
       "explorer/context": [
         {
-          "command": "csvPlus.openGrid",
+          "command": "csvEditor.openGrid",
           "when": "resourceExtname =~ /\\.(csv|tsv|tab|psv)$/i",
           "group": "navigation"
         },
         {
-          "command": "csvPlus.export",
+          "command": "csvEditor.export",
           "when": "resourceExtname =~ /\\.(csv|tsv|tab|psv)$/i",
           "group": "7_modification"
         },
         {
-          "command": "csvPlus.runPipeline",
+          "command": "csvEditor.runPipeline",
           "when": "resourceFilename =~ /\\.csvpipe\\.json$/",
           "group": "navigation"
         }
       ],
       "view/title": [
         {
-          "command": "csvPlus.settings.selectScope",
-          "when": "view == csvPlus.settingsView",
+          "command": "csvEditor.settings.selectScope",
+          "when": "view == csvEditor.settingsView",
           "group": "navigation@1"
         },
         {
-          "command": "csvPlus.settings.openNative",
-          "when": "view == csvPlus.settingsView",
+          "command": "csvEditor.settings.openNative",
+          "when": "view == csvEditor.settingsView",
           "group": "navigation@2"
         },
         {
-          "command": "csvPlus.settings.resetAll",
-          "when": "view == csvPlus.settingsView",
+          "command": "csvEditor.settings.resetAll",
+          "when": "view == csvEditor.settingsView",
           "group": "1_reset"
         },
         {
-          "command": "csvPlus.newPipeline",
-          "when": "view == csvPlus.pipelinesView",
+          "command": "csvEditor.newPipeline",
+          "when": "view == csvEditor.pipelinesView",
           "group": "navigation@1"
         },
         {
-          "command": "csvPlus.views.refresh",
-          "when": "view == csvPlus.pipelinesView",
+          "command": "csvEditor.views.refresh",
+          "when": "view == csvEditor.pipelinesView",
           "group": "navigation@2"
         },
         {
-          "command": "csvPlus.views.refresh",
-          "when": "view == csvPlus.filesView",
+          "command": "csvEditor.views.refresh",
+          "when": "view == csvEditor.filesView",
           "group": "navigation@1"
         }
       ],
       "view/item/context": [
         {
-          "command": "csvPlus.settings.edit",
-          "when": "view == csvPlus.settingsView && viewItem =~ /^csvSetting/",
+          "command": "csvEditor.settings.edit",
+          "when": "view == csvEditor.settingsView && viewItem =~ /^csvSetting/",
           "group": "inline@1"
         },
         {
-          "command": "csvPlus.settings.reset",
-          "when": "view == csvPlus.settingsView && viewItem == csvSettingOverridden",
+          "command": "csvEditor.settings.reset",
+          "when": "view == csvEditor.settingsView && viewItem == csvSettingOverridden",
           "group": "inline@2"
         },
         {
-          "command": "csvPlus.settings.clearFileOverride",
-          "when": "view == csvPlus.settingsView && viewItem == csvFileOverrideGroup",
+          "command": "csvEditor.settings.clearFileOverride",
+          "when": "view == csvEditor.settingsView && viewItem == csvFileOverrideGroup",
           "group": "inline@1"
         },
         {
-          "command": "csvPlus.pipelines.run",
-          "when": "view == csvPlus.pipelinesView && viewItem == csvPipeline",
+          "command": "csvEditor.pipelines.run",
+          "when": "view == csvEditor.pipelinesView && viewItem == csvPipeline",
           "group": "inline@1"
         },
         {
-          "command": "csvPlus.pipelines.edit",
-          "when": "view == csvPlus.pipelinesView && viewItem == csvPipeline",
+          "command": "csvEditor.pipelines.edit",
+          "when": "view == csvEditor.pipelinesView && viewItem == csvPipeline",
           "group": "inline@2"
         },
         {
-          "command": "csvPlus.openGrid",
-          "when": "view == csvPlus.filesView && viewItem == csvFile",
+          "command": "csvEditor.openGrid",
+          "when": "view == csvEditor.filesView && viewItem == csvFile",
           "group": "inline@1"
         },
         {
-          "command": "csvPlus.files.openAsText",
-          "when": "view == csvPlus.filesView && viewItem == csvFile",
+          "command": "csvEditor.files.openAsText",
+          "when": "view == csvEditor.filesView && viewItem == csvFile",
           "group": "inline@2"
         }
       ]
     },
     "keybindings": [
       {
-        "command": "csvPlus.find",
+        "command": "csvEditor.find",
         "key": "ctrl+f",
         "mac": "cmd+f",
-        "when": "activeCustomEditorId == csvPlus.gridEditor && !findWidgetVisible"
+        "when": "activeCustomEditorId == csvEditor.gridEditor && !findWidgetVisible"
       }
     ],
     "configuration": {
-      "title": "CSV Grid Editor Plus",
+      "title": "CSV Editor",
       "properties": {
-        "csvPlus.hasHeaderRow": {
+        "csvEditor.hasHeaderRow": {
           "type": "boolean",
           "default": true,
           "description": "Treat the first row as column headers. Can be overridden per file from the grid toolbar."
         },
-        "csvPlus.delimiter": {
+        "csvEditor.delimiter": {
           "type": "string",
           "default": "auto",
           "enum": [
@@ -487,51 +490,51 @@
           ],
           "description": "Field delimiter. Can be overridden per file from the grid toolbar."
         },
-        "csvPlus.maxRows": {
+        "csvEditor.maxRows": {
           "type": "number",
           "default": 100000,
           "minimum": 100,
           "description": "Maximum number of rows rendered in the grid. Larger files are still fully editable and queryable, but only the first N rows are shown."
         },
-        "csvPlus.sqlResultLimit": {
+        "csvEditor.sqlResultLimit": {
           "type": "number",
           "default": 5000,
           "minimum": 1,
           "description": "Maximum number of rows returned to the SQL results panel."
         },
-        "csvPlus.rainbowColumns": {
+        "csvEditor.rainbowColumns": {
           "type": "boolean",
           "default": true,
           "description": "Colour each column differently when a CSV/TSV file is opened as text."
         },
-        "csvPlus.rainbowMaxLines": {
+        "csvEditor.rainbowMaxLines": {
           "type": "number",
           "default": 20000,
           "description": "Only colour the first N lines of a text-mode CSV, to keep large files responsive."
         },
-        "csvPlus.pipelines.folder": {
+        "csvEditor.pipelines.folder": {
           "type": "string",
           "default": ".vscode/csv-pipelines",
           "description": "Default folder for pipelines saved from the pipeline builder. Any *.csvpipe.json file in the workspace is discovered regardless."
         },
-        "csvPlus.pipelines.allowScripts": {
+        "csvEditor.pipelines.allowScripts": {
           "type": "boolean",
           "default": true,
           "description": "Allow pipeline steps that evaluate code (expressions, JavaScript, SQL, external commands). These never run in untrusted workspaces."
         },
-        "csvPlus.pipelines.timeoutMs": {
+        "csvEditor.pipelines.timeoutMs": {
           "type": "number",
           "default": 10000,
           "minimum": 100,
           "description": "Time limit for expression and script steps (commands get six times this)."
         },
-        "csvPlus.pipelines.previewRows": {
+        "csvEditor.pipelines.previewRows": {
           "type": "number",
           "default": 1000,
           "minimum": 10,
           "description": "Rows shown in the pipeline preview grid."
         },
-        "csvPlus.lintFieldCount": {
+        "csvEditor.lintFieldCount": {
           "type": "boolean",
           "default": true,
           "description": "In text mode, warn about rows whose field count differs from the header row."
@@ -634,26 +637,26 @@
     "viewsContainers": {
       "activitybar": [
         {
-          "id": "csvPlus",
+          "id": "csvEditor",
           "title": "CSV Plus",
           "icon": "media/sidebar-icon.svg"
         }
       ]
     },
     "views": {
-      "csvPlus": [
+      "csvEditor": [
         {
-          "id": "csvPlus.settingsView",
+          "id": "csvEditor.settingsView",
           "name": "Settings",
           "icon": "media/sidebar-icon.svg"
         },
         {
-          "id": "csvPlus.pipelinesView",
+          "id": "csvEditor.pipelinesView",
           "name": "Pipelines",
           "icon": "media/sidebar-icon.svg"
         },
         {
-          "id": "csvPlus.filesView",
+          "id": "csvEditor.filesView",
           "name": "Files",
           "icon": "media/sidebar-icon.svg"
         }
@@ -661,16 +664,16 @@
     },
     "viewsWelcome": [
       {
-        "view": "csvPlus.pipelinesView",
-        "contents": "No pipelines in this workspace.\n\nA pipeline is a reusable set of steps that cleans or reshapes a CSV, saved as a .csvpipe.json file.\n\n[Create a pipeline](command:csvPlus.newPipeline)\n\n[Read the guide](https://github.com/hazimsaeed2/csv-grid-editor-plus/blob/main/docs/pipelines.md)"
+        "view": "csvEditor.pipelinesView",
+        "contents": "No pipelines in this workspace.\n\nA pipeline is a reusable set of steps that cleans or reshapes a CSV, saved as a .csvpipe.json file.\n\n[Create a pipeline](command:csvEditor.newPipeline)\n\n[Read the guide](https://github.com/hazimsaeed2/csv-editor/blob/main/docs/pipelines.md)"
       },
       {
-        "view": "csvPlus.filesView",
+        "view": "csvEditor.filesView",
         "contents": "No CSV, TSV or PSV files found in this workspace.\n\n[Open a folder](command:vscode.openFolder)",
         "when": "workbenchState != empty"
       },
       {
-        "view": "csvPlus.filesView",
+        "view": "csvEditor.filesView",
         "contents": "Open a folder to list its delimited files.\n\n[Open a folder](command:vscode.openFolder)",
         "when": "workbenchState == empty"
       }

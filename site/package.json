@@ -2,7 +2,7 @@
   "name": "csv-grid-editor-site",
   "private": true,
   "type": "module",
-  "description": "Documentation site for the CSV Grid Editor VS Code extension, published at https://apps.bash-365.com/csv-vscode.",
+  "description": "Documentation site for the CSV Editor VS Code extension, published at https://apps.bash-365.com/csv-vscode.",
   "engines": {
     "node": ">=22.12.0"
   },

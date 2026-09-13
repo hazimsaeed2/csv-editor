@@ -56,7 +56,7 @@ The extension follows semantic versioning. The Marketplace additionally treats t
 npm run package:vsix
 ```
 
-This runs the production build and produces `csv-grid-viewer-<version>.vsix`. Dependencies are bundled by esbuild, so the package excludes `node_modules` entirely.
+This runs the production build and produces `csv-editor-<version>.vsix`. Dependencies are bundled by esbuild, so the package excludes `node_modules` entirely.
 
 Verify what is inside before publishing:
 
@@ -69,12 +69,12 @@ The package should contain `package.json`, `README.md`, `CHANGELOG.md`, `LICENSE
 ## Test the package
 
 ```bash
-code --install-extension csv-grid-viewer-<version>.vsix
+code --install-extension csv-editor-<version>.vsix
 ```
 
 Open a CSV file and confirm the grid renders, a cell edit saves, an AutoFilter dropdown opens, and the SQL panel returns a result. The SQL panel is the one to check specifically, because it is the only feature that loads a file from disk at runtime.
 
-Uninstall with `code --uninstall-extension bash-365.csv-grid-viewer`.
+Uninstall with `code --uninstall-extension hazimsaeed2.csv-editor`.
 
 ## Publish
 

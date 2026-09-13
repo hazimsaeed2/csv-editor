@@ -1,14 +1,14 @@
-# CSV Grid Editor Plus
+# CSV Editor
 
-This project is an MIT-licensed fork of [CSV Grid Editor](https://github.com/bamr87/csv-vscoode), maintained by `hazimsaeed2`. It adds clearer, theme-aware alternating row bands and a full-width hover stripe so a row remains easy to follow across wide CSV files.
+**CSV Editor by Hazim Saeed** is an MIT-licensed fork of the upstream [CSV Grid Editor](https://github.com/bamr87/csv-vscoode). It adds clearer, theme-aware alternating row bands and a full-width hover stripe so a row remains easy to follow across wide CSV files.
 
 Open CSV, TSV and other delimited files in a spreadsheet-style grid inside VS Code. Edit cells with real undo and save, filter columns the way Excel does, query the file with SQL, and turn repeated cleanup into pipelines you can re-run.
 
 Wide tables are easier to follow with visible alternating row bands and a hover stripe that continues through the frozen row-number gutter as you scroll horizontally.
 
-[![CI](https://github.com/hazimsaeed2/csv-grid-editor-plus/actions/workflows/ci.yml/badge.svg)](https://github.com/hazimsaeed2/csv-grid-editor-plus/actions/workflows/ci.yml) [![License](https://img.shields.io/badge/license-MIT-0e7c6b)](LICENSE)
+[![CI](https://github.com/hazimsaeed2/csv-editor/actions/workflows/ci.yml/badge.svg)](https://github.com/hazimsaeed2/csv-editor/actions/workflows/ci.yml) [![License](https://img.shields.io/badge/license-MIT-0e7c6b)](LICENSE)
 
-![CSV Grid Editor in action](https://raw.githubusercontent.com/bamr87/csv-vscoode/main/media/demo.gif)
+![CSV Editor in action](https://raw.githubusercontent.com/hazimsaeed2/csv-editor/main/media/demo.gif)
 
 ## Why
 
@@ -20,7 +20,7 @@ This extension puts the grid inside VS Code, on top of the file itself. The text
 
 ### A real grid over a real file
 
-![Grid](https://raw.githubusercontent.com/bamr87/csv-vscoode/main/media/screenshots/grid.png)
+![Grid](https://raw.githubusercontent.com/hazimsaeed2/csv-editor/main/media/screenshots/grid.png)
 
 - Virtualised rendering that stays smooth on files with 100,000 rows and more.
 - Automatic delimiter detection for comma, tab, semicolon and pipe, with a per-file override.
@@ -30,7 +30,7 @@ This extension puts the grid inside VS Code, on top of the file itself. The text
 
 ### Excel-style AutoFilter
 
-![AutoFilter](https://raw.githubusercontent.com/bamr87/csv-vscoode/main/media/screenshots/autofilter.png)
+![AutoFilter](https://raw.githubusercontent.com/hazimsaeed2/csv-editor/main/media/screenshots/autofilter.png)
 
 Click the caret in any column header, or press `Alt+Down`.
 
@@ -41,31 +41,31 @@ Click the caret in any column header, or press `Alt+Down`.
 
 ### Find, replace and sort
 
-![Find and replace](https://raw.githubusercontent.com/bamr87/csv-vscoode/main/media/screenshots/find-replace.png)
+![Find and replace](https://raw.githubusercontent.com/hazimsaeed2/csv-editor/main/media/screenshots/find-replace.png)
 
 `Ctrl+F` opens find and replace with match case, whole cell and regular expression modes, live highlighting of every match, and replace-all in a single undo step. The Sort dialog does up to three levels and can either sort the view or write the new order to the file.
 
 ### Edit rows and columns
 
-![Cell menu](https://raw.githubusercontent.com/bamr87/csv-vscoode/main/media/screenshots/cell-menu.png)
+![Cell menu](https://raw.githubusercontent.com/hazimsaeed2/csv-editor/main/media/screenshots/cell-menu.png)
 
 Toolbar menus and right-click menus cover insert, duplicate, move, delete and hide for both rows and columns, on single items or whole selections. Beyond that: split a column into several, merge columns together, transpose the table, remove empty or duplicate rows, fill down and right with `Ctrl+D` and `Ctrl+R`, fill a series, trim whitespace, change case, and normalize rows whose field count does not match the header.
 
 ### Understand the data
 
-![Statistics](https://raw.githubusercontent.com/bamr87/csv-vscoode/main/media/screenshots/statistics.png)
+![Statistics](https://raw.githubusercontent.com/hazimsaeed2/csv-editor/main/media/screenshots/statistics.png)
 
 The Statistics panel gives per-column counts, distinct values, blanks, minimum and maximum, sum, mean, median, standard deviation, quartiles and the most frequent values. The Chart panel draws a histogram for numeric columns and a top-values bar chart for the rest.
 
 ### Query it with SQL
 
-![SQL](https://raw.githubusercontent.com/bamr87/csv-vscoode/main/media/screenshots/sql.png)
+![SQL](https://raw.githubusercontent.com/hazimsaeed2/csv-editor/main/media/screenshots/sql.png)
 
 The SQL panel loads the whole file into an in-memory SQLite database named `csv` and runs real queries against it, including joins onto itself, window functions and aggregates. Results can be copied or opened as a new CSV.
 
 ### Pipelines: repeatable transformations
 
-![Pipeline builder](https://raw.githubusercontent.com/bamr87/csv-vscoode/main/media/screenshots/pipeline.png)
+![Pipeline builder](https://raw.githubusercontent.com/hazimsaeed2/csv-editor/main/media/screenshots/pipeline.png)
 
 The same cleanup usually happens more than once. Describe it once as a `*.csvpipe.json` file and run it on demand, when the file opens, or when it is saved.
 
@@ -116,14 +116,14 @@ To make the grid the default for those extensions:
 
 ```json
 "workbench.editorAssociations": {
-  "*.csv": "csvPlus.gridEditor",
-  "*.tsv": "csvPlus.gridEditor",
-  "*.tab": "csvPlus.gridEditor",
-  "*.psv": "csvPlus.gridEditor"
+  "*.csv": "csvEditor.gridEditor",
+  "*.tsv": "csvEditor.gridEditor",
+  "*.tab": "csvEditor.gridEditor",
+  "*.psv": "csvEditor.gridEditor"
 }
 ```
 
-You can also use **Open With…** → **CSV Grid Editor** → **Configure default editor…**. Details: [Getting started](docs/getting-started.md).
+You can also use **Open With…** → **CSV Editor** → **Configure default editor…**. Details: [Getting started](docs/getting-started.md).
 
 ## Documentation
 
@@ -170,17 +170,17 @@ Every command is under the **CSV** category in the Command Palette.
 
 | Setting | Default | Description |
 | --- | --- | --- |
-| `csvPlus.hasHeaderRow` | `true` | Treat the first row as column headers |
-| `csvPlus.delimiter` | `auto` | Field delimiter: `auto`, `,`, `\t`, `;` or `\|` |
-| `csvPlus.maxRows` | `100000` | Rows rendered in the grid |
-| `csvPlus.sqlResultLimit` | `5000` | Maximum rows returned to the SQL panel |
-| `csvPlus.rainbowColumns` | `true` | Colour columns in text mode |
-| `csvPlus.rainbowMaxLines` | `20000` | Only colour the first N lines in text mode |
-| `csvPlus.lintFieldCount` | `true` | Warn about rows whose field count differs from the header |
-| `csvPlus.pipelines.folder` | `.vscode/csv-pipelines` | Where the builder saves new pipelines |
-| `csvPlus.pipelines.allowScripts` | `true` | Allow steps that evaluate code |
-| `csvPlus.pipelines.timeoutMs` | `10000` | Time limit for expression and script steps |
-| `csvPlus.pipelines.previewRows` | `1000` | Rows shown in the pipeline preview |
+| `csvEditor.hasHeaderRow` | `true` | Treat the first row as column headers |
+| `csvEditor.delimiter` | `auto` | Field delimiter: `auto`, `,`, `\t`, `;` or `\|` |
+| `csvEditor.maxRows` | `100000` | Rows rendered in the grid |
+| `csvEditor.sqlResultLimit` | `5000` | Maximum rows returned to the SQL panel |
+| `csvEditor.rainbowColumns` | `true` | Colour columns in text mode |
+| `csvEditor.rainbowMaxLines` | `20000` | Only colour the first N lines in text mode |
+| `csvEditor.lintFieldCount` | `true` | Warn about rows whose field count differs from the header |
+| `csvEditor.pipelines.folder` | `.vscode/csv-pipelines` | Where the builder saves new pipelines |
+| `csvEditor.pipelines.allowScripts` | `true` | Allow steps that evaluate code |
+| `csvEditor.pipelines.timeoutMs` | `10000` | Time limit for expression and script steps |
+| `csvEditor.pipelines.previewRows` | `1000` | Rows shown in the pipeline preview |
 
 Details in [docs/settings.md](docs/settings.md).
 
@@ -199,7 +199,7 @@ VS Code 1.90 or later. No other dependencies; everything ships in the extension.
 
 ## Contributing
 
-Development setup, architecture and conventions are in [CONTRIBUTING.md](CONTRIBUTING.md). Issues and pull requests are welcome at https://github.com/bamr87/csv-vscoode.
+Development setup, architecture and conventions are in [CONTRIBUTING.md](CONTRIBUTING.md). Issues and pull requests are welcome at https://github.com/hazimsaeed2/csv-editor.
 
 The documentation site lives in [`site/`](site/) and is published from `main` to [apps.bash-365.com/csv-vscode](https://apps.bash-365.com/csv-vscode/). Its guides are generated from the markdown in `docs/`, so a documentation change belongs there, not in the site.
 

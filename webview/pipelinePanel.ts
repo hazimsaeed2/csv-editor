@@ -153,7 +153,7 @@ export class PipelinePanel {
     if (this.path) {
       this.listSelect.value = this.path;
     }
-    this.status.textContent = scriptsAllowed ? "" : "Expression, script, SQL and command steps are disabled (untrusted workspace or csvPlus.pipelines.allowScripts).";
+    this.status.textContent = scriptsAllowed ? "" : "Expression, script, SQL and command steps are disabled (untrusted workspace or csvEditor.pipelines.allowScripts).";
   }
 
   setPipeline(pipeline: Pipeline, path?: string): void {

@@ -191,8 +191,8 @@ Expressions and inline scripts run in a Node `vm` context inside the extension h
 A `vm` context is an isolation mechanism, not a security boundary, and a `command` step is arbitrary code by design. Pipelines are treated the same way VS Code treats tasks:
 
 - Steps that evaluate anything, which is `filter`, `compute`, `script`, `scriptFile`, `sql` and `command`, only run in a **trusted workspace**.
-- Set `csvPlus.pipelines.allowScripts` to `false` to disable them even in a trusted workspace. No-code steps keep working.
-- The time limit is `csvPlus.pipelines.timeoutMs`, defaulting to 10 seconds. Commands get six times that.
+- Set `csvEditor.pipelines.allowScripts` to `false` to disable them even in a trusted workspace. No-code steps keep working.
+- The time limit is `csvEditor.pipelines.timeoutMs`, defaulting to 10 seconds. Commands get six times that.
 
 Review a `.csvpipe.json` file that arrives with a cloned repository before running it, exactly as you would review `.vscode/tasks.json`.
 

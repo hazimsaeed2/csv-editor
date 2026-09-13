@@ -1,4 +1,4 @@
-# CSV Grid Editor documentation
+# CSV Editor documentation
 
 Everything the extension can do, grouped by task. Start with [Getting started](getting-started.md) if this is your first time.
 

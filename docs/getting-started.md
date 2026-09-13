@@ -2,7 +2,7 @@
 
 ## Install
 
-From the VS Code Marketplace, search for **CSV Grid Editor** and select Install. From a `.vsix` file, run `code --install-extension csv-grid-editor-<version>.vsix`, or use **Extensions: Install from VSIX** in the Command Palette.
+From the VS Code Marketplace, search for **CSV Editor** and select Install. From a `.vsix` file, run `code --install-extension csv-editor-<version>.vsix`, or use **Extensions: Install from VSIX** in the Command Palette.
 
 ## Open a file
 
@@ -13,7 +13,7 @@ Open the grid any of these ways:
 - Click **Open in Grid Editor** in the editor title bar
 - Right-click the file in the Explorer and choose **Open in Grid Editor**
 - Run **CSV: Open in Grid Editor** from the Command Palette
-- Right-click the editor tab, choose **Open With…**, then **CSV Grid Editor**
+- Right-click the editor tab, choose **Open With…**, then **CSV Editor**
 
 The grid reads the file, detects the delimiter, decides whether the first row is a header, and infers a type for each column. All three decisions are shown in the toolbar and all three can be overridden per file.
 
@@ -29,15 +29,15 @@ Text mode has its own features: each column gets a distinct colour, hovering a c
 
 If you prefer every matching file to open in the grid, either:
 
-1. Use **Open With…** → **CSV Grid Editor**, then choose **Configure default editor for '*.csv'…** (and the same for `.tsv` / `.tab` / `.psv` if you want), or
+1. Use **Open With…** → **CSV Editor**, then choose **Configure default editor for '*.csv'…** (and the same for `.tsv` / `.tab` / `.psv` if you want), or
 2. Add associations in your settings:
 
 ```json
 "workbench.editorAssociations": {
-  "*.csv": "csvPlus.gridEditor",
-  "*.tsv": "csvPlus.gridEditor",
-  "*.tab": "csvPlus.gridEditor",
-  "*.psv": "csvPlus.gridEditor"
+  "*.csv": "csvEditor.gridEditor",
+  "*.tsv": "csvEditor.gridEditor",
+  "*.tab": "csvEditor.gridEditor",
+  "*.psv": "csvEditor.gridEditor"
 }
 ```
 
@@ -53,7 +53,7 @@ To undo that and return to the text editor as the default, remove those entries 
 
 ## Large files
 
-The grid renders rows virtually, so scrolling stays smooth on large files. By default the first 100,000 rows are loaded into the view; the setting is `csvPlus.maxRows`.
+The grid renders rows virtually, so scrolling stays smooth on large files. By default the first 100,000 rows are loaded into the view; the setting is `csvEditor.maxRows`.
 
 When a file is larger than that, a banner tells you so. SQL still operates on the whole file. Cell edits, find and statistics operate on the loaded rows. Whole-table rewrites (trim, change case, fill empty, transpose, normalize rows) run on the host against the full file so unloaded rows are not dropped.
 

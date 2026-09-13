@@ -17,7 +17,7 @@ Pick any column to see:
 
 Below that is a frequency table of the ten most common values with their counts and percentages, which is usually the fastest way to spot inconsistent categories, stray whitespace or an unexpected null marker.
 
-On a file larger than `csvPlus.maxRows`, statistics cover the loaded rows and the panel says so.
+On a file larger than `csvEditor.maxRows`, statistics cover the loaded rows and the panel says so.
 
 ## Charts
 
@@ -34,7 +34,7 @@ Charts follow the active VS Code theme.
 
 ![SQL panel](https://raw.githubusercontent.com/bamr87/csv-vscoode/main/media/screenshots/sql.png)
 
-The SQL panel runs real SQLite queries over the file through sql.js, which is SQLite compiled to WebAssembly. The whole file is loaded into a table named `csv`, whatever `csvPlus.maxRows` is set to.
+The SQL panel runs real SQLite queries over the file through sql.js, which is SQLite compiled to WebAssembly. The whole file is loaded into a table named `csv`, whatever `csvEditor.maxRows` is set to.
 
 ```sql
 SELECT category,
@@ -49,7 +49,7 @@ ORDER BY revenue DESC
 - Column names become SQLite column names. Names with spaces or punctuation need double quotes: `SELECT "unit price" FROM csv`. Click a column chip above the editor to insert a correctly quoted name.
 - Columns inferred as integer or number are stored as `INTEGER` or `REAL`, so numeric comparisons and aggregates work without casting. Everything else is `TEXT`. Empty cells become `NULL`.
 - `Ctrl+Enter` runs the query. The status line reports the row count and elapsed time.
-- Results are capped by `csvPlus.sqlResultLimit`, which defaults to 5,000 rows. The panel tells you when a result was truncated.
+- Results are capped by `csvEditor.sqlResultLimit`, which defaults to 5,000 rows. The panel tells you when a result was truncated.
 - **Open result as CSV** turns the result set into a new CSV document. **Copy result as TSV** puts it on the clipboard, ready to paste into a spreadsheet.
 
 The database is rebuilt whenever the document changes, so queries always see current data. Statements that modify the in-memory table, such as `DELETE`, do not touch your file, and the change is discarded on the next rebuild.
