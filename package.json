@@ -2,7 +2,7 @@
   "name": "csv-editor",
   "displayName": "CSV Editor",
   "description": "CSV Editor for VS Code with a spreadsheet grid, clear row banding, column colors, filters, statistics, charts, SQL and data pipelines.",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "publisher": "hazimsaeed2",
   "author": {
     "name": "Hazim Saeed"

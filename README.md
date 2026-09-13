@@ -1,10 +1,8 @@
 # CSV Editor
 
-**CSV Editor by Hazim Saeed** is an MIT-licensed fork of the upstream [CSV Grid Editor](https://github.com/bamr87/csv-vscoode). It adds clearer, theme-aware alternating row bands and a full-width hover stripe so a row remains easy to follow across wide CSV files.
+**CSV Editor by Hazim Saeed** brings a fast, spreadsheet-style CSV and TSV editor directly into VS Code. Edit data, filter columns, inspect statistics, build charts, run SQL queries, and automate repeatable cleanup without leaving your workspace.
 
-Open CSV, TSV and other delimited files in a spreadsheet-style grid inside VS Code. Edit cells with real undo and save, filter columns the way Excel does, query the file with SQL, and turn repeated cleanup into pipelines you can re-run.
-
-Wide tables are easier to follow with visible alternating row bands and a hover stripe that continues through the frozen row-number gutter as you scroll horizontally.
+Rainbow column colors make wide files easier to scan. Clear alternating row bands and a full-width hover outline help you follow the same record while scrolling horizontally.
 
 [![CI](https://github.com/hazimsaeed2/csv-editor/actions/workflows/ci.yml/badge.svg)](https://github.com/hazimsaeed2/csv-editor/actions/workflows/ci.yml) [![License](https://img.shields.io/badge/license-MIT-0e7c6b)](LICENSE)
 
@@ -127,9 +125,7 @@ You can also use **Open With…** → **CSV Editor** → **Configure default edi
 
 ## Documentation
 
-Full documentation, a feature tour and a live in-browser demo: **[apps.bash-365.com/csv-vscode](https://apps.bash-365.com/csv-vscode/)**.
-
-The same guides are readable here in the repository:
+Guides are available in this repository:
 
 | Guide | Covers |
 | --- | --- |
@@ -142,29 +138,28 @@ The same guides are readable here in the repository:
 | [Settings](docs/settings.md) | Every configuration option |
 | [Troubleshooting](docs/troubleshooting.md) | Common problems |
 | [Feature parity](docs/FEATURE-PARITY.md) | Comparison with Excel and other CSV tools |
-| [Live demo](https://apps.bash-365.com/csv-vscode/demo/) | A working grid in your browser, no install needed |
 
 ## Commands
 
-Every command is under the **CSV** category in the Command Palette.
+Every command is under the **CSV Editor** category in the Command Palette.
 
 | Command | Description |
 | --- | --- |
-| `CSV: Open in Grid Editor` | Open the active or selected file in the grid |
-| `CSV: Open as Text` | Switch the current grid to the text editor |
-| `CSV: Find and Replace in Grid` | Focus the find bar |
-| `CSV: Column Statistics` | Open the statistics panel |
-| `CSV: Chart a Column` | Open the chart panel |
-| `CSV: Run SQL Query` | Open the SQL panel |
-| `CSV: Export As…` | Export to JSON, Markdown, HTML, SQL or another delimiter |
-| `CSV: Toggle Header Row` | Treat or stop treating the first row as headers |
-| `CSV: Set Delimiter` | Override the detected delimiter |
-| `CSV: Run Pipeline…` | Run a pipeline on the current file |
-| `CSV: Open Pipeline Builder` | Open the visual pipeline panel |
-| `CSV: New Pipeline` | Create a pipeline from a template |
-| `CSV: New Pipeline Script` | Create a pipeline script from a template |
-| `CSV: Show Pipeline Log` | Open the CSV Pipelines output channel |
-| `CSV: Show Actions` | Quick pick of everything above |
+| `CSV Editor: Open in Grid Editor` | Open the active or selected file in the grid |
+| `CSV Editor: Open as Text` | Switch the current grid to the text editor |
+| `CSV Editor: Find and Replace in Grid` | Focus the find bar |
+| `CSV Editor: Column Statistics` | Open the statistics panel |
+| `CSV Editor: Chart a Column` | Open the chart panel |
+| `CSV Editor: Run SQL Query` | Open the SQL panel |
+| `CSV Editor: Export As…` | Export to JSON, Markdown, HTML, SQL or another delimiter |
+| `CSV Editor: Toggle Header Row` | Treat or stop treating the first row as headers |
+| `CSV Editor: Set Delimiter` | Override the detected delimiter |
+| `CSV Editor: Run Pipeline…` | Run a pipeline on the current file |
+| `CSV Editor: Open Pipeline Builder` | Open the visual pipeline panel |
+| `CSV Editor: New Pipeline` | Create a pipeline from a template |
+| `CSV Editor: New Pipeline Script` | Create a pipeline script from a template |
+| `CSV Editor: Show Pipeline Log` | Open the CSV Pipelines output channel |
+| `CSV Editor: Show Actions` | Quick pick of everything above |
 
 ## Settings
 
@@ -201,8 +196,6 @@ VS Code 1.90 or later. No other dependencies; everything ships in the extension.
 
 Development setup, architecture and conventions are in [CONTRIBUTING.md](CONTRIBUTING.md). Issues and pull requests are welcome at https://github.com/hazimsaeed2/csv-editor.
 
-The documentation site lives in [`site/`](site/) and is published from `main` to [apps.bash-365.com/csv-vscode](https://apps.bash-365.com/csv-vscode/). Its guides are generated from the markdown in `docs/`, so a documentation change belongs there, not in the site.
-
 ## License
 
-[MIT](LICENSE)
+[MIT](LICENSE). CSV Editor is derived from the upstream [CSV Grid Editor](https://github.com/bamr87/csv-vscoode); the original copyright and permission notice are retained as required by the license.

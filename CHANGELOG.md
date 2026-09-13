@@ -4,6 +4,7 @@
 
 ### Added
 
+- An original rainbow CSV icon that reflects rainbow column coloring and full-row tracking.
 - Clearer, theme-aware alternating row bands and a full-width hover stripe, including the frozen row-number gutter, for tracking records across wide CSV files.
 - A documentation site at [apps.bash-365.com/csv-vscode](https://apps.bash-365.com/csv-vscode/), built with Astro and Starlight from `site/`. It carries the full guide set with search, a feature tour, a contributor section, and a live demo that runs the extension's own `src/core` parsing, type inference and statistics in the browser over sample or user-supplied files, including real SQLite via WebAssembly.
 - The site's guides are generated from `docs/`, `README.md`, `CHANGELOG.md` and `CONTRIBUTING.md`, and its command and pipeline references are generated from `package.json` and `schemas/csvpipe.schema.json`, so neither can drift from what the extension contributes.
@@ -15,6 +16,7 @@
 
 ### Changed
 
+- Reworked the Marketplace README to lead with CSV Editor's capabilities and moved upstream attribution to the License section.
 - Distinguished the fork throughout VS Code as **CSV Editor** while leaving the separately installed upstream **CSV Grid Editor** unchanged.
 - Renamed the fork to **CSV Editor**, credited it to **Hazim Saeed**, and moved extension-owned commands and settings to the collision-safe `csvEditor.*` namespace.
 
