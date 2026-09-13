@@ -72,6 +72,6 @@ Example binding in `keybindings.json`:
 {
   "key": "ctrl+shift+q",
   "command": "csv.runSql",
-  "when": "activeCustomEditorId == csv.gridEditor"
+  "when": "activeCustomEditorId == csvPlus.gridEditor"
 }
 ```

@@ -4,17 +4,17 @@
 
 That is the default. The grid is an optional editor so it does not hijack every CSV. Open it with **Open in Grid Editor** in the title bar, the Explorer context menu, **CSV: Open in Grid Editor**, or **Open With…** → **CSV Grid Editor**.
 
-To always open matching files in the grid, set `workbench.editorAssociations` (for example `"*.csv": "csv.gridEditor"`), or use **Open With…** → **Configure default editor…**. See [Getting started](getting-started.md).
+To always open matching files in the grid, set `workbench.editorAssociations` (for example `"*.csv": "csvPlus.gridEditor"`), or use **Open With…** → **Configure default editor…**. See [Getting started](getting-started.md).
 
 If you already set the grid as default and a file still opens as text, another association is winning — check `workbench.editorAssociations` for a more specific pattern covering that file.
 
 ## Columns are split in the wrong places
 
-The delimiter was detected incorrectly, which happens on files with very few rows or an unusual mix of punctuation. Override it from the toolbar dropdown, or set `csv.delimiter` for the workspace. The override is remembered per file.
+The delimiter was detected incorrectly, which happens on files with very few rows or an unusual mix of punctuation. Override it from the toolbar dropdown, or set `csvPlus.delimiter` for the workspace. The override is remembered per file.
 
 ## The first data row is being used as headers
 
-Uncheck **Header row** in the toolbar. If most of your files have no header, set `csv.hasHeaderRow` to `false` for the workspace.
+Uncheck **Header row** in the toolbar. If most of your files have no header, set `csvPlus.hasHeaderRow` to `false` for the workspace.
 
 ## Numbers sort or aggregate as text
 
@@ -30,15 +30,15 @@ Normalizing never discards non-empty data: extra cells beyond the header width a
 
 ## Only some of my rows are shown
 
-Two possibilities. Either a filter is active, in which case the status bar reports it and offers a link to clear it, or the file is larger than `csv.maxRows` and a banner says so.
+Two possibilities. Either a filter is active, in which case the status bar reports it and offers a link to clear it, or the file is larger than `csvPlus.maxRows` and a banner says so.
 
 ## Find does not match rows I know exist
 
-Find covers the rows loaded in the grid. On a file larger than `csv.maxRows`, raise that setting or use the SQL panel, which always queries the whole file.
+Find covers the rows loaded in the grid. On a file larger than `csvPlus.maxRows`, raise that setting or use the SQL panel, which always queries the whole file.
 
 ## A pipeline step will not run
 
-Steps that evaluate code require a trusted workspace. Check the trust banner, and check `csv.pipelines.allowScripts`. The pipeline panel says explicitly when these steps are disabled.
+Steps that evaluate code require a trusted workspace. Check the trust banner, and check `csvPlus.pipelines.allowScripts`. The pipeline panel says explicitly when these steps are disabled.
 
 ## A pipeline fails and I cannot see why
 

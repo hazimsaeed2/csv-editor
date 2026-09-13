@@ -34,10 +34,10 @@ If you prefer every matching file to open in the grid, either:
 
 ```json
 "workbench.editorAssociations": {
-  "*.csv": "csv.gridEditor",
-  "*.tsv": "csv.gridEditor",
-  "*.tab": "csv.gridEditor",
-  "*.psv": "csv.gridEditor"
+  "*.csv": "csvPlus.gridEditor",
+  "*.tsv": "csvPlus.gridEditor",
+  "*.tab": "csvPlus.gridEditor",
+  "*.psv": "csvPlus.gridEditor"
 }
 ```
 
@@ -53,7 +53,7 @@ To undo that and return to the text editor as the default, remove those entries 
 
 ## Large files
 
-The grid renders rows virtually, so scrolling stays smooth on large files. By default the first 100,000 rows are loaded into the view; the setting is `csv.maxRows`.
+The grid renders rows virtually, so scrolling stays smooth on large files. By default the first 100,000 rows are loaded into the view; the setting is `csvPlus.maxRows`.
 
 When a file is larger than that, a banner tells you so. SQL still operates on the whole file. Cell edits, find and statistics operate on the loaded rows. Whole-table rewrites (trim, change case, fill empty, transpose, normalize rows) run on the host against the full file so unloaded rows are not dropped.
 

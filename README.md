@@ -1,8 +1,12 @@
-# CSV Grid Editor
+# CSV Grid Editor Plus
+
+This project is an MIT-licensed fork of [CSV Grid Editor](https://github.com/bamr87/csv-vscoode), maintained by `hazimsaeed2`. It adds clearer, theme-aware alternating row bands and a full-width hover stripe so a row remains easy to follow across wide CSV files.
 
 Open CSV, TSV and other delimited files in a spreadsheet-style grid inside VS Code. Edit cells with real undo and save, filter columns the way Excel does, query the file with SQL, and turn repeated cleanup into pipelines you can re-run.
 
-[![Marketplace](https://badgen.net/vs-marketplace/v/bash-365.csv-grid-viewer?color=0e7c6b&label=marketplace)](https://marketplace.visualstudio.com/items?itemName=bash-365.csv-grid-viewer) [![Installs](https://badgen.net/vs-marketplace/i/bash-365.csv-grid-viewer?color=0e7c6b)](https://marketplace.visualstudio.com/items?itemName=bash-365.csv-grid-viewer) [![Open VSX](https://img.shields.io/open-vsx/v/bash-365/csv-grid-viewer?color=0e7c6b&label=open%20vsx)](https://open-vsx.org/extension/bash-365/csv-grid-viewer) [![Docs](https://img.shields.io/badge/docs-apps.bash--365.com-0e7c6b)](https://apps.bash-365.com/csv-vscode/) [![CI](https://github.com/bamr87/csv-vscoode/actions/workflows/ci.yml/badge.svg)](https://github.com/bamr87/csv-vscoode/actions/workflows/ci.yml) [![License](https://img.shields.io/badge/license-MIT-0e7c6b)](LICENSE)
+Wide tables are easier to follow with visible alternating row bands and a hover stripe that continues through the frozen row-number gutter as you scroll horizontally.
+
+[![CI](https://github.com/hazimsaeed2/csv-grid-editor-plus/actions/workflows/ci.yml/badge.svg)](https://github.com/hazimsaeed2/csv-grid-editor-plus/actions/workflows/ci.yml) [![License](https://img.shields.io/badge/license-MIT-0e7c6b)](LICENSE)
 
 ![CSV Grid Editor in action](https://raw.githubusercontent.com/bamr87/csv-vscoode/main/media/demo.gif)
 
@@ -112,10 +116,10 @@ To make the grid the default for those extensions:
 
 ```json
 "workbench.editorAssociations": {
-  "*.csv": "csv.gridEditor",
-  "*.tsv": "csv.gridEditor",
-  "*.tab": "csv.gridEditor",
-  "*.psv": "csv.gridEditor"
+  "*.csv": "csvPlus.gridEditor",
+  "*.tsv": "csvPlus.gridEditor",
+  "*.tab": "csvPlus.gridEditor",
+  "*.psv": "csvPlus.gridEditor"
 }
 ```
 
@@ -166,17 +170,17 @@ Every command is under the **CSV** category in the Command Palette.
 
 | Setting | Default | Description |
 | --- | --- | --- |
-| `csv.hasHeaderRow` | `true` | Treat the first row as column headers |
-| `csv.delimiter` | `auto` | Field delimiter: `auto`, `,`, `\t`, `;` or `\|` |
-| `csv.maxRows` | `100000` | Rows rendered in the grid |
-| `csv.sqlResultLimit` | `5000` | Maximum rows returned to the SQL panel |
-| `csv.rainbowColumns` | `true` | Colour columns in text mode |
-| `csv.rainbowMaxLines` | `20000` | Only colour the first N lines in text mode |
-| `csv.lintFieldCount` | `true` | Warn about rows whose field count differs from the header |
-| `csv.pipelines.folder` | `.vscode/csv-pipelines` | Where the builder saves new pipelines |
-| `csv.pipelines.allowScripts` | `true` | Allow steps that evaluate code |
-| `csv.pipelines.timeoutMs` | `10000` | Time limit for expression and script steps |
-| `csv.pipelines.previewRows` | `1000` | Rows shown in the pipeline preview |
+| `csvPlus.hasHeaderRow` | `true` | Treat the first row as column headers |
+| `csvPlus.delimiter` | `auto` | Field delimiter: `auto`, `,`, `\t`, `;` or `\|` |
+| `csvPlus.maxRows` | `100000` | Rows rendered in the grid |
+| `csvPlus.sqlResultLimit` | `5000` | Maximum rows returned to the SQL panel |
+| `csvPlus.rainbowColumns` | `true` | Colour columns in text mode |
+| `csvPlus.rainbowMaxLines` | `20000` | Only colour the first N lines in text mode |
+| `csvPlus.lintFieldCount` | `true` | Warn about rows whose field count differs from the header |
+| `csvPlus.pipelines.folder` | `.vscode/csv-pipelines` | Where the builder saves new pipelines |
+| `csvPlus.pipelines.allowScripts` | `true` | Allow steps that evaluate code |
+| `csvPlus.pipelines.timeoutMs` | `10000` | Time limit for expression and script steps |
+| `csvPlus.pipelines.previewRows` | `1000` | Rows shown in the pipeline preview |
 
 Details in [docs/settings.md](docs/settings.md).
 

@@ -11,7 +11,7 @@ Compared against: Microsoft Excel (desktop), Rainbow CSV (VS Code), Edit CSV (VS
 | Feature | Excel | Rainbow CSV | Edit CSV | Excel Viewer | Data Wrangler | csvkit / mlr / qsv | CSV Grid Editor |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Grid view with row numbers | ✅ | ❌ (text) | ✅ | ✅ | ✅ | ❌ | ✅ |
-| Virtualised rendering for 100k+ rows | ✅ | ✅ | ◐ | ✅ | ✅ | ✅ | ✅ (`csv.maxRows`) |
+| Virtualised rendering for 100k+ rows | ✅ | ✅ | ◐ | ✅ | ✅ | ✅ | ✅ (`csvPlus.maxRows`) |
 | Column type inference | ✅ | ◐ | ❌ | ✅ | ✅ | ✅ | ✅ |
 | Frozen header row | ✅ | — | ✅ | ✅ | ✅ | — | ✅ |
 | Frozen columns / freeze panes | ✅ | — | ✅ (fixed columns) | ✅ | ❌ | — | ◐ row numbers only (see gaps) |

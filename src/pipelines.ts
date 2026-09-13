@@ -27,7 +27,7 @@ export interface PipelineSettings {
 }
 
 export function getPipelineSettings(): PipelineSettings {
-  const config = vscode.workspace.getConfiguration("csv.pipelines");
+  const config = vscode.workspace.getConfiguration("csvPlus.pipelines");
   return {
     folder: config.get<string>("folder", ".vscode/csv-pipelines"),
     allowScripts: config.get<boolean>("allowScripts", true),
@@ -201,7 +201,7 @@ export class PipelineService {
     if (usesCode && !this.scriptsAllowed()) {
       throw new Error(
         vscode.workspace.isTrusted
-          ? "Expression, script, SQL and command steps are disabled by the csv.pipelines.allowScripts setting."
+          ? "Expression, script, SQL and command steps are disabled by the csvPlus.pipelines.allowScripts setting."
           : "Expression, script, SQL and command steps only run in trusted workspaces."
       );
     }

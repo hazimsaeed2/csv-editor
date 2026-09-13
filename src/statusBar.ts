@@ -7,7 +7,7 @@ import { documentDelimiter, documentHeaders, scanDocumentLine } from "./textMode
 
 /** Status bar item summarizing the active CSV (grid or text mode). */
 export function registerStatusBar(context: vscode.ExtensionContext, provider: CsvEditorProvider): void {
-  const item = vscode.window.createStatusBarItem("csv.status", vscode.StatusBarAlignment.Right, 100);
+  const item = vscode.window.createStatusBarItem("csvPlus.status", vscode.StatusBarAlignment.Right, 100);
   item.name = "CSV";
   context.subscriptions.push(item);
 
@@ -19,7 +19,7 @@ export function registerStatusBar(context: vscode.ExtensionContext, provider: Cs
       const cols = columnCount(table).toLocaleString();
       item.text = `$(table) ${rows} × ${cols} · ${describeDelimiter(table.delimiter)}`;
       item.tooltip = `${session.document.fileName}\n${rows} rows, ${cols} columns, ${describeDelimiter(table.delimiter)}-separated. Click for CSV actions.`;
-      item.command = "csv.showActions";
+      item.command = "csvPlus.showActions";
       item.show();
       return;
     }
@@ -35,7 +35,7 @@ export function registerStatusBar(context: vscode.ExtensionContext, provider: Cs
       const name = col !== undefined ? (headers[col]?.trim() || `Column ${col + 1}`) : "";
       item.text = `$(table) ${name ? `${name} (${(col ?? 0) + 1})` : "CSV"} · ${describeDelimiter(delimiter)}`;
       item.tooltip = "Click to open in the CSV grid editor";
-      item.command = "csv.openGrid";
+      item.command = "csvPlus.openGrid";
       item.show();
       return;
     }

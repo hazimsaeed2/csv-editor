@@ -115,7 +115,7 @@ export class CsvHoverProvider implements vscode.HoverProvider {
  * from the header row. Quoted multi-line fields are respected.
  */
 export function registerFieldCountLinter(context: vscode.ExtensionContext): void {
-  const diagnostics = vscode.languages.createDiagnosticCollection("csv");
+  const diagnostics = vscode.languages.createDiagnosticCollection("csvPlus");
   context.subscriptions.push(diagnostics);
   const timers = new Map<string, ReturnType<typeof setTimeout>>();
 
@@ -159,7 +159,7 @@ export function registerFieldCountLinter(context: vscode.ExtensionContext): void
       if (count !== expected) {
         const range = new vscode.Range(recordStart, 0, line, text.length);
         const d = new vscode.Diagnostic(range, `Row has ${count} field${count === 1 ? "" : "s"}; the header has ${expected}.`, vscode.DiagnosticSeverity.Warning);
-        d.source = "csv";
+        d.source = "csvPlus";
         items.push(d);
         if (items.length >= 500) {
           break;
@@ -189,7 +189,7 @@ export function registerFieldCountLinter(context: vscode.ExtensionContext): void
     vscode.workspace.onDidChangeTextDocument((e) => schedule(e.document)),
     vscode.workspace.onDidCloseTextDocument((d) => diagnostics.delete(d.uri)),
     vscode.workspace.onDidChangeConfiguration((e) => {
-      if (e.affectsConfiguration("csv")) {
+      if (e.affectsConfiguration("csvPlus")) {
         vscode.workspace.textDocuments.forEach(schedule);
       }
     })

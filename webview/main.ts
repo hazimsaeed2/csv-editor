@@ -357,7 +357,7 @@ class App {
       this.banner.hidden = false;
       this.banner.textContent =
         `Showing the first ${this.loadedRows.toLocaleString()} of ${this.totalRows.toLocaleString()} rows ` +
-        `(csv.maxRows = ${this.settings.maxRows.toLocaleString()}). SQL still covers the whole file. ` +
+        `(csvPlus.maxRows = ${this.settings.maxRows.toLocaleString()}). SQL still covers the whole file. ` +
         `Cell edits, find and statistics apply to the loaded rows. Whole-table rewrites ` +
         `(trim, case, fill empty, transpose, normalize) run on the host against the full file.`;
     } else {

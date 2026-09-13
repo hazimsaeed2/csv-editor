@@ -14,7 +14,7 @@ export interface SettingChoice {
 }
 
 export interface SettingDef {
-  /** Full configuration key, e.g. `csv.maxRows`. */
+  /** Full configuration key, e.g. `csvPlus.maxRows`. */
   key: string;
   label: string;
   type: SettingType;
@@ -30,14 +30,14 @@ export const SETTING_GROUPS = ["Parsing", "Grid", "Text mode", "Pipelines"] as c
 
 export const SETTINGS: SettingDef[] = [
   {
-    key: "csv.hasHeaderRow",
+    key: "csvPlus.hasHeaderRow",
     label: "Header row",
     type: "boolean",
     detail: "Treat the first row as column names.",
     group: "Parsing"
   },
   {
-    key: "csv.delimiter",
+    key: "csvPlus.delimiter",
     label: "Delimiter",
     type: "enum",
     detail: "Field separator. Auto-detect scores each candidate against the file.",
@@ -51,7 +51,7 @@ export const SETTINGS: SettingDef[] = [
     ]
   },
   {
-    key: "csv.maxRows",
+    key: "csvPlus.maxRows",
     label: "Maximum rows in the grid",
     type: "number",
     detail: "Larger files still edit, query and export in full.",
@@ -59,7 +59,7 @@ export const SETTINGS: SettingDef[] = [
     min: 100
   },
   {
-    key: "csv.sqlResultLimit",
+    key: "csvPlus.sqlResultLimit",
     label: "SQL result limit",
     type: "number",
     detail: "Rows returned to the SQL panel.",
@@ -67,14 +67,14 @@ export const SETTINGS: SettingDef[] = [
     min: 1
   },
   {
-    key: "csv.rainbowColumns",
+    key: "csvPlus.rainbowColumns",
     label: "Rainbow columns",
     type: "boolean",
     detail: "Colour each column when a CSV is open as text.",
     group: "Text mode"
   },
   {
-    key: "csv.rainbowMaxLines",
+    key: "csvPlus.rainbowMaxLines",
     label: "Rainbow line limit",
     type: "number",
     detail: "Only colour the first N lines, to stay responsive.",
@@ -82,28 +82,28 @@ export const SETTINGS: SettingDef[] = [
     min: 0
   },
   {
-    key: "csv.lintFieldCount",
+    key: "csvPlus.lintFieldCount",
     label: "Report ragged rows",
     type: "boolean",
     detail: "Warn when a row's field count differs from the header.",
     group: "Text mode"
   },
   {
-    key: "csv.pipelines.allowScripts",
+    key: "csvPlus.pipelines.allowScripts",
     label: "Allow code steps",
     type: "boolean",
     detail: "Expressions, scripts, SQL and commands. Never run in untrusted workspaces.",
     group: "Pipelines"
   },
   {
-    key: "csv.pipelines.folder",
+    key: "csvPlus.pipelines.folder",
     label: "Pipeline folder",
     type: "string",
     detail: "Where the builder saves new pipelines.",
     group: "Pipelines"
   },
   {
-    key: "csv.pipelines.timeoutMs",
+    key: "csvPlus.pipelines.timeoutMs",
     label: "Script timeout (ms)",
     type: "number",
     detail: "Commands are allowed six times this.",
@@ -111,7 +111,7 @@ export const SETTINGS: SettingDef[] = [
     min: 100
   },
   {
-    key: "csv.pipelines.previewRows",
+    key: "csvPlus.pipelines.previewRows",
     label: "Preview rows",
     type: "number",
     detail: "Rows shown in the pipeline preview.",

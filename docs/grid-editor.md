@@ -6,6 +6,8 @@ The grid is a `CustomTextEditorProvider` over the file's text document. Every ch
 
 Quoting, the delimiter and the line ending are preserved when the file is written back. A field is quoted only when it needs to be, matching RFC 4180.
 
+Alternating rows use distinct theme-aware bands. Moving the pointer over a row adds a full-width focus stripe that continues through the frozen row-number gutter, making the same record easy to follow while scrolling across wide files.
+
 ## Editing cells
 
 | Action | How |
@@ -81,7 +83,7 @@ Fill works on the selected rectangle, taking the first cell or row as the source
 
 ## Ragged rows
 
-A CSV row with a different number of fields than the header usually means a quoting problem. The status bar shows a count of such rows and clicking it offers to normalize them. In text mode the same rows appear as warnings in the Problems panel; set `csv.lintFieldCount` to `false` to turn that off.
+A CSV row with a different number of fields than the header usually means a quoting problem. The status bar shows a count of such rows and clicking it offers to normalize them. In text mode the same rows appear as warnings in the Problems panel; set `csvPlus.lintFieldCount` to `false` to turn that off.
 
 ## View options
 
@@ -94,7 +96,7 @@ The **View** menu toggles:
 
 ## Header row and delimiter
 
-The toolbar has a **Header row** checkbox and a delimiter dropdown. Both override the automatic detection for that file only, and both are remembered for the file. The workspace defaults are `csv.hasHeaderRow` and `csv.delimiter`.
+The toolbar has a **Header row** checkbox and a delimiter dropdown. Both override the automatic detection for that file only, and both are remembered for the file. The workspace defaults are `csvPlus.hasHeaderRow` and `csvPlus.delimiter`.
 
 With the header row off, columns are named `Column 1`, `Column 2` and so on, and the first line is treated as data.
 

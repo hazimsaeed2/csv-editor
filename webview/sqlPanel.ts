@@ -26,7 +26,7 @@ export class SqlPanel {
       placeholder: "SELECT * FROM csv LIMIT 100"
     });
     this.editor.value = "SELECT *\nFROM csv\nLIMIT 100";
-    this.status = h("div", { class: "sql-status muted small" }, "Table name: csv. Ctrl+Enter runs the query.");
+    this.status = h("div", { class: "sql-status muted small" }, "Table name: csvPlus. Ctrl+Enter runs the query.");
     this.results = h("div", { class: "sql-results" });
     this.columnsHint = h("div", { class: "sql-columns muted small" });
     this.openButton = button("Open result as CSV", () => this.openResult(), { disabled: true });
@@ -111,7 +111,7 @@ export class SqlPanel {
     const shown = result.rows.length.toLocaleString();
     const total = result.totalRows.toLocaleString();
     this.status.textContent = result.truncated
-      ? `Showing ${shown} of ${total} rows (${result.durationMs} ms). Raise csv.sqlResultLimit to see more.`
+      ? `Showing ${shown} of ${total} rows (${result.durationMs} ms). Raise csvPlus.sqlResultLimit to see more.`
       : `${total} row${result.totalRows === 1 ? "" : "s"} (${result.durationMs} ms)`;
     this.renderResult(result);
   }

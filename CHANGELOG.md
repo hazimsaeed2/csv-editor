@@ -4,6 +4,7 @@
 
 ### Added
 
+- Clearer, theme-aware alternating row bands and a full-width hover stripe, including the frozen row-number gutter, for tracking records across wide CSV files.
 - A documentation site at [apps.bash-365.com/csv-vscode](https://apps.bash-365.com/csv-vscode/), built with Astro and Starlight from `site/`. It carries the full guide set with search, a feature tour, a contributor section, and a live demo that runs the extension's own `src/core` parsing, type inference and statistics in the browser over sample or user-supplied files, including real SQLite via WebAssembly.
 - The site's guides are generated from `docs/`, `README.md`, `CHANGELOG.md` and `CONTRIBUTING.md`, and its command and pipeline references are generated from `package.json` and `schemas/csvpipe.schema.json`, so neither can drift from what the extension contributes.
 - A `docs` workflow that builds the site on every pull request, checks every internal link against the built output, and deploys to GitHub Pages from `main`.

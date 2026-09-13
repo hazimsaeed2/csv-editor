@@ -17,53 +17,53 @@ When a delimited file is active, the view gains a **This file** group at the top
 
 ## Parsing
 
-### `csv.hasHeaderRow`
+### `csvPlus.hasHeaderRow`
 
 Default `true`. Treat the first row as column names. The toolbar checkbox overrides this for a single file, and that override is remembered.
 
-### `csv.delimiter`
+### `csvPlus.delimiter`
 
 Default `auto`. One of `auto`, `,`, `\t`, `;` or `|`. With `auto`, the delimiter is detected by scoring each candidate on how consistently it splits the first records, with the file extension as a tie-breaker: `.tsv` and `.tab` prefer tab, `.psv` prefers pipe. The toolbar dropdown overrides this per file.
 
 ## Grid
 
-### `csv.maxRows`
+### `csvPlus.maxRows`
 
 Default `100000`. How many rows are loaded into the grid view. SQL still queries the whole file. Cell edits, find and statistics apply to the loaded rows. Whole-table rewrites run on the host against the full file. Raising this costs memory and initial render time.
 
-### `csv.sqlResultLimit`
+### `csvPlus.sqlResultLimit`
 
 Default `5000`. Maximum rows returned to the SQL results panel. The query still runs over the whole file and the panel reports the true total when a result is truncated.
 
 ## Text mode
 
-### `csv.rainbowColumns`
+### `csvPlus.rainbowColumns`
 
 Default `true`. Give each column a distinct colour when a CSV file is open in the text editor. Colours come from your theme's semantic token colours, so they follow the active theme.
 
-### `csv.rainbowMaxLines`
+### `csvPlus.rainbowMaxLines`
 
 Default `20000`. Only colour the first N lines, which keeps very large files responsive.
 
-### `csv.lintFieldCount`
+### `csvPlus.lintFieldCount`
 
 Default `true`. Report rows whose field count differs from the header row as warnings in the Problems panel. A mismatch usually means an unescaped quote or delimiter. Multi-line quoted fields are handled correctly and are not flagged.
 
 ## Pipelines
 
-### `csv.pipelines.folder`
+### `csvPlus.pipelines.folder`
 
 Default `.vscode/csv-pipelines`. Where the pipeline builder proposes to save new pipelines. Any `*.csvpipe.json` file anywhere in the workspace is discovered regardless of this setting.
 
-### `csv.pipelines.allowScripts`
+### `csvPlus.pipelines.allowScripts`
 
 Default `true`. Allow steps that evaluate code: `filter`, `compute`, `script`, `scriptFile`, `sql` and `command`. These never run in an untrusted workspace whatever this is set to. Setting it to `false` disables them everywhere; no-code steps continue to work.
 
-### `csv.pipelines.timeoutMs`
+### `csvPlus.pipelines.timeoutMs`
 
 Default `10000`. Time limit for expression and script steps. External commands get six times this value.
 
-### `csv.pipelines.previewRows`
+### `csvPlus.pipelines.previewRows`
 
 Default `1000`. Rows shown in the pipeline preview grid. Does not affect what is written when the pipeline runs for real.
 
@@ -71,7 +71,7 @@ Default `1000`. Rows shown in the pipeline preview grid. Does not affect what is
 
 | Setting | Why it matters |
 | --- | --- |
-| `workbench.editorAssociations` | Set `"*.csv": "csv.gridEditor"` (and the same for `.tsv` / `.tab` / `.psv`) to open files in the grid by default; use `"default"` to keep the text editor |
+| `workbench.editorAssociations` | Set `"*.csv": "csvPlus.gridEditor"` (and the same for `.tsv` / `.tab` / `.psv`) to open files in the grid by default; use `"default"` to keep the text editor |
 | `files.encoding` | The grid reads and writes with the encoding VS Code uses for the document |
 | `files.autoSave` | With `afterDelay`, grid edits save automatically, and `onSave` pipelines fire accordingly |
 | `editor.semanticHighlighting.enabled` | Required for rainbow columns; the extension enables it for `csv` and `tsv` by default |
@@ -80,17 +80,17 @@ Default `1000`. Rows shown in the pipeline preview grid. Does not affect what is
 
 ```json
 {
-  "csv.delimiter": "auto",
-  "csv.maxRows": 250000,
-  "csv.pipelines.allowScripts": true,
+  "csvPlus.delimiter": "auto",
+  "csvPlus.maxRows": 250000,
+  "csvPlus.pipelines.allowScripts": true,
   "[csv]": {
     "editor.semanticHighlighting.enabled": true
   },
   "workbench.editorAssociations": {
-    "*.csv": "csv.gridEditor",
-    "*.tsv": "csv.gridEditor",
-    "*.tab": "csv.gridEditor",
-    "*.psv": "csv.gridEditor"
+    "*.csv": "csvPlus.gridEditor",
+    "*.tsv": "csvPlus.gridEditor",
+    "*.tab": "csvPlus.gridEditor",
+    "*.psv": "csvPlus.gridEditor"
   }
 }
 ```

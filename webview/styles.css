@@ -898,14 +898,18 @@ textarea.code {
   color: var(--vscode-editor-foreground);
   border-bottom: 1px solid var(--vscode-editorWidget-border, var(--vscode-panel-border));
   min-height: 24px;
+  transition: background-color 80ms ease, box-shadow 80ms ease;
 }
 
 .tabulator-row.tabulator-row-even {
-  background: color-mix(in srgb, var(--vscode-editor-background) 92%, var(--vscode-editor-foreground));
+  background: color-mix(in srgb, var(--vscode-editor-background) 86%, var(--vscode-editor-foreground));
 }
 
 .tabulator-row.tabulator-selectable:hover {
   background: var(--vscode-list-hoverBackground);
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, var(--vscode-focusBorder) 55%, transparent),
+    inset 0 -1px 0 color-mix(in srgb, var(--vscode-focusBorder) 55%, transparent);
 }
 
 .tabulator-row .tabulator-cell {
@@ -937,6 +941,15 @@ textarea.code {
 .tabulator-row .tabulator-cell.tabulator-frozen,
 .tabulator .tabulator-header .tabulator-col.tabulator-frozen {
   background: var(--vscode-editor-background);
+}
+
+/* Keep row tracking continuous through the frozen row-number gutter. */
+.tabulator-row.tabulator-row-even .tabulator-cell.tabulator-frozen {
+  background: color-mix(in srgb, var(--vscode-editor-background) 86%, var(--vscode-editor-foreground));
+}
+
+.tabulator-row.tabulator-selectable:hover .tabulator-cell.tabulator-frozen {
+  background: var(--vscode-list-hoverBackground);
 }
 
 .tabulator-row .tabulator-cell.tabulator-frozen.tabulator-frozen-left,
