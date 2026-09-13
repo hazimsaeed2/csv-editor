@@ -41,7 +41,11 @@ Click the caret in any column header, or press `Alt+Down`.
 
 ![Find and replace](https://raw.githubusercontent.com/hazimsaeed2/csv-editor/main/media/screenshots/find-replace.png)
 
-`Ctrl+F` opens find and replace with match case, whole cell and regular expression modes, live highlighting of every match, and replace-all in a single undo step. The Sort dialog does up to three levels and can either sort the view or write the new order to the file.
+![Clear three-state sorting controls](https://raw.githubusercontent.com/hazimsaeed2/csv-editor/main/media/screenshots/sorting.png)
+
+`Ctrl+F` opens find and replace with match case, whole cell and regular expression modes, live highlighting of every match, and replace-all in a single undo step. Header sorting uses clear `⇅`, `↑` and `↓` states. The Sort dialog does up to three levels and can either sort the view or write the new order to the file.
+
+![Multi-level Sort dialog](https://raw.githubusercontent.com/hazimsaeed2/csv-editor/main/media/screenshots/sort-dialog.png)
 
 ### Edit rows and columns
 

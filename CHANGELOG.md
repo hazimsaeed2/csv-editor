@@ -6,6 +6,10 @@
 
 - Made the ascending and descending sort arrows equally bright and removed Tabulator's remaining gray triangle styling.
 
+### Changed
+
+- Refreshed every README and documentation screenshot, plus the animated demo, to show the rainbow grid and current sorting, filtering, analysis, SQL and pipeline interfaces.
+
 ## 1.0.12
 
 ### Changed

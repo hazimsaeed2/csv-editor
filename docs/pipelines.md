@@ -2,7 +2,7 @@
 
 A pipeline is an ordered list of steps applied to a CSV file. It is stored as a `*.csvpipe.json` file in your workspace, so it can be reviewed, versioned and shared like any other source file.
 
-![Pipeline builder](https://raw.githubusercontent.com/bamr87/csv-vscoode/main/media/screenshots/pipeline.png)
+![Pipeline builder](https://raw.githubusercontent.com/hazimsaeed2/csv-editor/main/media/screenshots/pipeline.png)
 
 Pipelines exist because the same cleanup usually happens more than once. Instead of repeating the same twelve manual edits on every export, you describe them once and run them on demand, when the file opens, or when it is saved.
 

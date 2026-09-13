@@ -4,7 +4,7 @@ Three side panels sit next to the grid: Statistics, Chart and SQL. Open them fro
 
 ## Column statistics
 
-![Statistics panel](https://raw.githubusercontent.com/bamr87/csv-vscoode/main/media/screenshots/statistics.png)
+![Statistics panel](https://raw.githubusercontent.com/hazimsaeed2/csv-editor/main/media/screenshots/statistics.png)
 
 Pick any column to see:
 
@@ -21,7 +21,7 @@ On a file larger than `csvEditor.maxRows`, statistics cover the loaded rows and 
 
 ## Charts
 
-![Chart panel](https://raw.githubusercontent.com/bamr87/csv-vscoode/main/media/screenshots/chart.png)
+![Chart panel](https://raw.githubusercontent.com/hazimsaeed2/csv-editor/main/media/screenshots/chart.png)
 
 The Chart panel draws one of two things, chosen automatically or forced from the dropdown:
 
@@ -32,7 +32,7 @@ Charts follow the active VS Code theme.
 
 ## SQL
 
-![SQL panel](https://raw.githubusercontent.com/bamr87/csv-vscoode/main/media/screenshots/sql.png)
+![SQL panel](https://raw.githubusercontent.com/hazimsaeed2/csv-editor/main/media/screenshots/sql.png)
 
 The SQL panel runs real SQLite queries over the file through sql.js, which is SQLite compiled to WebAssembly. The whole file is loaded into a table named `csv`, whatever `csvEditor.maxRows` is set to.
 

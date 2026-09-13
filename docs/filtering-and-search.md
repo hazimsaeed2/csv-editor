@@ -4,7 +4,7 @@
 
 Every column header has a caret button. Click it, or press `Alt+Down` with a cell in that column selected, to open the AutoFilter dropdown.
 
-![AutoFilter dropdown](https://raw.githubusercontent.com/bamr87/csv-vscoode/main/media/screenshots/autofilter.png)
+![AutoFilter dropdown](https://raw.githubusercontent.com/hazimsaeed2/csv-editor/main/media/screenshots/autofilter.png)
 
 The dropdown has four parts.
 
@@ -40,7 +40,7 @@ Right-click a cell and choose **Filter by this value** to filter that column to 
 
 Press `Ctrl+F` (`Cmd+F` on macOS) to open the find bar.
 
-![Find and replace](https://raw.githubusercontent.com/bamr87/csv-vscoode/main/media/screenshots/find-replace.png)
+![Find and replace](https://raw.githubusercontent.com/hazimsaeed2/csv-editor/main/media/screenshots/find-replace.png)
 
 - Three toggles: match case, match whole cell, and regular expression.
 - Every match is highlighted in the grid; the current match is highlighted more strongly and scrolled into view.
@@ -63,7 +63,9 @@ There are three ways to sort, and they differ in whether the file changes.
 
 The **Sort** dialog offers three levels: sort by one column, then by another, then by a third.
 
-![Sort dialog](https://raw.githubusercontent.com/bamr87/csv-vscoode/main/media/screenshots/sort-dialog.png)
+![Header sorting](https://raw.githubusercontent.com/hazimsaeed2/csv-editor/main/media/screenshots/sorting.png)
+
+![Sort dialog](https://raw.githubusercontent.com/hazimsaeed2/csv-editor/main/media/screenshots/sort-dialog.png)
 
 Numeric columns sort numerically, so `10` comes after `9`. Blank cells always sort last, matching Excel. The sort is stable, so rows that compare equal keep their original relative order.
 
