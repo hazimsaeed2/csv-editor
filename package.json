@@ -2,7 +2,7 @@
   "name": "csv-editor",
   "displayName": "CSV Editor",
   "description": "CSV Editor for VS Code with a spreadsheet grid, clear row banding, column colors, filters, statistics, charts, SQL and data pipelines.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "publisher": "hazimsaeed2",
   "author": {
     "name": "Hazim Saeed"
@@ -118,150 +118,150 @@
       {
         "command": "csvEditor.openGrid",
         "title": "Open in Grid Editor",
-        "category": "CSV",
+        "category": "CSV Editor",
         "icon": "$(table)"
       },
       {
         "command": "csvEditor.openAsText",
         "title": "Open as Text",
-        "category": "CSV",
+        "category": "CSV Editor",
         "icon": "$(file-code)"
       },
       {
         "command": "csvEditor.find",
         "title": "Find and Replace in Grid",
-        "category": "CSV"
+        "category": "CSV Editor"
       },
       {
         "command": "csvEditor.columnStats",
         "title": "Column Statistics",
-        "category": "CSV"
+        "category": "CSV Editor"
       },
       {
         "command": "csvEditor.chart",
         "title": "Chart a Column",
-        "category": "CSV"
+        "category": "CSV Editor"
       },
       {
         "command": "csvEditor.runSql",
         "title": "Run SQL Query",
-        "category": "CSV"
+        "category": "CSV Editor"
       },
       {
         "command": "csvEditor.export",
         "title": "Export As…",
-        "category": "CSV"
+        "category": "CSV Editor"
       },
       {
         "command": "csvEditor.toggleHeaderRow",
         "title": "Toggle Header Row",
-        "category": "CSV"
+        "category": "CSV Editor"
       },
       {
         "command": "csvEditor.setDelimiter",
         "title": "Set Delimiter",
-        "category": "CSV"
+        "category": "CSV Editor"
       },
       {
         "command": "csvEditor.showActions",
         "title": "Show Actions",
-        "category": "CSV"
+        "category": "CSV Editor"
       },
       {
         "command": "csvEditor.runPipeline",
         "title": "Run Pipeline…",
-        "category": "CSV",
+        "category": "CSV Editor",
         "icon": "$(run-all)"
       },
       {
         "command": "csvEditor.openPipelinePanel",
         "title": "Open Pipeline Builder",
-        "category": "CSV"
+        "category": "CSV Editor"
       },
       {
         "command": "csvEditor.newPipeline",
         "title": "New Pipeline",
-        "category": "CSV"
+        "category": "CSV Editor"
       },
       {
         "command": "csvEditor.newPipelineScript",
         "title": "New Pipeline Script",
-        "category": "CSV"
+        "category": "CSV Editor"
       },
       {
         "command": "csvEditor.showPipelineLog",
         "title": "Show Pipeline Log",
-        "category": "CSV"
+        "category": "CSV Editor"
       },
       {
         "command": "csvEditor.views.refresh",
         "title": "Refresh",
-        "category": "CSV",
+        "category": "CSV Editor",
         "icon": "$(refresh)"
       },
       {
         "command": "csvEditor.settings.edit",
         "title": "Edit Setting",
-        "category": "CSV",
+        "category": "CSV Editor",
         "icon": "$(edit)"
       },
       {
         "command": "csvEditor.settings.reset",
         "title": "Reset to Default",
-        "category": "CSV",
+        "category": "CSV Editor",
         "icon": "$(discard)"
       },
       {
         "command": "csvEditor.settings.resetAll",
         "title": "Reset All Settings",
-        "category": "CSV",
+        "category": "CSV Editor",
         "icon": "$(clear-all)"
       },
       {
         "command": "csvEditor.settings.openNative",
         "title": "Open in Settings Editor",
-        "category": "CSV",
+        "category": "CSV Editor",
         "icon": "$(gear)"
       },
       {
         "command": "csvEditor.settings.selectScope",
         "title": "Change Settings Scope",
-        "category": "CSV",
+        "category": "CSV Editor",
         "icon": "$(root-folder)"
       },
       {
         "command": "csvEditor.settings.editFileOverride",
         "title": "Edit File Override",
-        "category": "CSV"
+        "category": "CSV Editor"
       },
       {
         "command": "csvEditor.settings.clearFileOverride",
         "title": "Clear File Overrides",
-        "category": "CSV",
+        "category": "CSV Editor",
         "icon": "$(discard)"
       },
       {
         "command": "csvEditor.pipelines.run",
         "title": "Run Pipeline",
-        "category": "CSV",
+        "category": "CSV Editor",
         "icon": "$(play)"
       },
       {
         "command": "csvEditor.pipelines.edit",
         "title": "Edit Pipeline File",
-        "category": "CSV",
+        "category": "CSV Editor",
         "icon": "$(go-to-file)"
       },
       {
         "command": "csvEditor.files.openAsText",
         "title": "Open as Text",
-        "category": "CSV",
+        "category": "CSV Editor",
         "icon": "$(file-code)"
       },
       {
         "command": "csvEditor.reloadDocument",
         "title": "Reload Document",
-        "category": "CSV"
+        "category": "CSV Editor"
       }
     ],
     "menus": {
@@ -638,7 +638,7 @@
       "activitybar": [
         {
           "id": "csvEditor",
-          "title": "CSV Plus",
+          "title": "CSV Editor",
           "icon": "media/sidebar-icon.svg"
         }
       ]

@@ -15,6 +15,7 @@
 
 ### Changed
 
+- Distinguished the fork throughout VS Code as **CSV Editor** while leaving the separately installed upstream **CSV Grid Editor** unchanged.
 - Renamed the fork to **CSV Editor**, credited it to **Hazim Saeed**, and moved extension-owned commands and settings to the collision-safe `csvEditor.*` namespace.
 
 - Documentation screenshots and the demo GIF now show the grid inside the VS Code workbench, with the CSV sidebar (Settings, Pipelines, Files) visible rather than a cropped webview.
