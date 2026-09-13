@@ -2,7 +2,7 @@
 
 ## Install
 
-From the VS Code Marketplace, search for **CSV Editor by Hazim Saeed** and select Install. From a `.vsix` file, run `code --install-extension csv-editor-by-hazim-<version>.vsix`, or use **Extensions: Install from VSIX** in the Command Palette.
+From the VS Code Marketplace, search for **CSV Editor: Spreadsheet & SQL** and select Install. From a `.vsix` file, run `code --install-extension csv-editor-by-hazim-<version>.vsix`, or use **Extensions: Install from VSIX** in the Command Palette.
 
 ## Open a file
 

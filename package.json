@@ -1,8 +1,8 @@
 {
   "name": "csv-editor-by-hazim",
-  "displayName": "CSV Editor by Hazim Saeed",
-  "description": "Fast CSV and TSV editor for VS Code with a spreadsheet grid, filters, sorting, column colors, statistics, charts, SQL queries and data pipelines.",
-  "version": "1.0.13",
+  "displayName": "CSV Editor: Spreadsheet & SQL",
+  "description": "Edit CSV and TSV files in a colorful spreadsheet grid with filters, sorting, statistics, charts, SQL queries and data pipelines.",
+  "version": "1.0.14",
   "publisher": "hazimsaeed2",
   "author": {
     "name": "Hazim Saeed"
@@ -40,12 +40,12 @@
     "excel",
     "sql",
     "csv sql",
-    "data",
+    "csv spreadsheet",
     "data analysis",
     "data cleaning",
     "data visualization",
-    "filter",
-    "sort",
+    "csv filter",
+    "csv sort",
     "statistics",
     "charts",
     "pipeline",
@@ -53,7 +53,7 @@
     "comma separated values",
     "tab separated values",
     "column colors",
-    "data science"
+    "spreadsheet editor"
   ],
   "engines": {
     "vscode": "^1.90.0"

@@ -1,6 +1,6 @@
-# CSV Editor for VS Code
+# CSV Editor: Spreadsheet & SQL for VS Code
 
-**CSV Editor by Hazim Saeed** is a fast CSV and TSV editor for VS Code and an enhanced version of the original [CSV Grid Editor](https://github.com/bamr87/csv-vscoode) by **Bash-365**. This fork builds on the original spreadsheet-style data grid while preserving full credit to its creator and the original MIT license. Open, view, edit, filter, sort and format CSV or TSV files; inspect statistics, build charts, run SQL queries and automate repeatable data cleanup without leaving your workspace.
+**CSV Editor: Spreadsheet & SQL** by **Hazim Saeed** is a fast CSV and TSV editor for VS Code and an enhanced version of the original [CSV Grid Editor](https://github.com/bamr87/csv-vscoode) by **Bash-365**. This fork builds on the original spreadsheet-style data grid while preserving full credit to its creator and the original MIT license. Open, view, edit, filter, sort and format CSV or TSV files; inspect statistics, build charts, run SQL queries and automate repeatable data cleanup without leaving your workspace.
 
 Rainbow column colors make wide files easier to scan. Clear alternating row bands and a full-width hover outline help you follow the same record while scrolling horizontally.
 

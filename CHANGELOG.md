@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.14
+
+### Changed
+
+- Renamed the Marketplace display title to **CSV Editor: Spreadsheet & SQL** and strengthened the short description for clearer CSV-search relevance. The permanent extension identifier remains `hazimsaeed2.csv-editor-by-hazim`, so existing installations update normally.
+
 ## 1.0.13
 
 ### Fixed
